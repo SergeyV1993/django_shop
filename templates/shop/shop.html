@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block content %}
+    <div class="product-big-title-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-bit-title text-center">
+                        <h2>Shop</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="single-product-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                {% for product_image in products_image %}
+                 <div class="col-md-3 col-sm-6">
+
+                     <div class="single-shop-product">
+                         <div class="product-upper">
+                             <img src="{{ STATIC_URL }}{{ product_image.image.url }}" class="product-main-img" style="width:250px; height: 250px">
+                         </div>
+
+                         <h2>
+                             <a href="{% url 'product' product_image.product.id %}">
+                                 {{ product_image.product.name }}
+                             </a>
+                         </h2>
+
+                         <div class="product-carousel-price">
+                             <p>
+                                 {{ product_image.product.price }} RUB
+                             </p>
+                         </div>
+
+                         <div class="product-option-shop">
+                             <form action="#" method="POST">
+                                 {% csrf_token %}
+                                 {% if request.user.is_authenticated %}
+                                     <input type="submit" class="cart" data-id="{{ product_image.product.id }}" name="quantity" value="Add to cart">
+                                     <input type="hidden" value="1" name="quantity">
+                                 {% else %}
+                                     <small class="text-center"><a href="{% url 'login' %}">Войдите</a> или <a href="{% url 'registration' %}">Зарегистрируйтесь</a></small>
+                                 {% endif %}
+                             </form>
+                         </div>
+                     </div>
+                 </div>
+                {% endfor %}
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-pagination text-center">
+                        <nav>
+                          <ul class="pagination">
+                            <li>
+                                {% if products_image.has_previous %}
+                                    <a href="?page={{ products_image.previous_page_number }}" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                {% endif %}
+                            </li>
+
+
+                            {% for num_page in products_image.paginator.page_range %}
+                                <li><a href="?page={{ num_page }}">{{ num_page }}</a></li>
+                            {% endfor %}
+
+                            <li>
+                                {% if products_image.has_next %}
+                                    <a href="?page={{ products_image.next_page_number }}" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                {% endif %}
+                            </li>
+                          </ul>
+                        </nav>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+        <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+        <script>
+          $(document).ready(function(){
+            $(".cart").on('click', function(e) {
+                e.preventDefault();
+                var product_id = $(this).attr('data-id');
+                data = {
+                    product_id: product_id,
+                    quantity: 1
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: {% url "cart:add_to_cart" %},
+                    data: data,
+                    success: function(data) {
+                        $("#cart_count").html(data.cart_total);
+                        $("#cart_total_sum").html(data.cart_total_sum);
+                        $("#cart_total_summ").html(data.cart_total_summ);
+                    }
+                });
+             });
+          });
+        </script>
+    {% endblock %}

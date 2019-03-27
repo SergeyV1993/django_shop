@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+    {% block content %}
+    <div class="product-big-title-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-bit-title text-center">
+                        <h2>Account</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {% if request.user.is_authenticated %}
+    <div id="order_review" style="position: relative;">
+        <h3 class="text-center">Account {{ request.user }}</h3>
+        <h4 class="text-center">Your orders</h4>
+        <table class="shop_table">
+            <thead>
+                <tr>
+                    <th class="product-name">ID order</th>
+                    <th class="product-name">Date of order</th>
+                    <th class="product-name">Status</th>
+                    <th class="product-name">Amount</th>
+                    <th class="product-name">Detail</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for item in order %}
+                <tr class="cart_item">
+                    <td class="product-name">{{ item.id }}</td>
+                    <td class="product-name">{{ item.create }}</td>
+                    <td class="product-name">{{ item.status }}</td>
+                    <td class="product-name">{{ item.total_price }}</td>
+                    <td class="product-name"><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal-{{ item.id }}">Детали</button></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+<!-- Modal -->
+    {% for item in order %}
+<div class="modal fade" id="myModal-{{ item.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Товары в заказе № {{ item.id }}</h4>
+      </div>
+      <div class="modal-body">
+          <h3>Товары</h3>
+          <table class="shop_table">
+             <tbody>
+               {% for order_item in item.productinorder_set.all %}
+                   <tr class="cart_item">
+                       <td class="product-name">
+                           {{ order_item.product.name }} <strong class="product-quantity">× {{ order_item.number_of_product }}</strong> </td>
+                       <td class="product-total">
+                           <span class="amount">{{ order_item.total_price }}</span> </td>
+                   </tr>
+               {% endfor %}
+             </tbody>
+             <tfoot>
+                 <tr class="order-total">
+                     <th>Total</th>
+                     <td><strong><span class="amount">{{ item.total_price }}</span></strong> </td>
+                 </tr>
+             </tfoot>
+          </table>
+          <h3>Заказчик</h3>
+          <p>Почта: {{ item.customer_email }}</p>
+          <p>Имя: {{ item.customer_name }}</p>
+          <p>Телефон: {{ item.customer_phone }}</p>
+          <p>Комментарий: {{ item.comments }}</p>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    {% endfor %}
+    {% else %}
+        <h3 class="text-center"><a href="{% url 'login' %}">Войдите</a> или <a href="{% url 'registration' %}">Зарегистрируйтесь</a></h3>
+    {% endif %}
+{% endblock %}

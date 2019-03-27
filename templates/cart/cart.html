@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block content %}
+    <div class="product-big-title-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-bit-title text-center">
+                        <h2>Cart</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End Page title area -->
+    
+
+    <div class="single-product-area">
+    {% if request.user.is_authenticated %}
+    {% if cart.items.count > 0 %}
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="product-content-right">
+                        <div class="woocommerce">
+
+                                <table cellspacing="0" class="shop_table cart">
+                                    <thead>
+                                        <tr>
+                                            <th class="product-remove">&nbsp;</th>
+                                            <th class="product-name">Product</th>
+                                            <th class="product-price">Price</th>
+                                            <th class="product-quantity">Quantity</th>
+                                            <th class="product-subtotal">Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for item in cart.items.all %}
+                                                <tr class="cart_item-{{ item.product.id }}">
+                                                    <td class="product-remove">
+                                                        <span title="Remove this item">
+                                                            <input type="submit" class="del" data-id="{{ item.product.id }}"  value="Remove">
+                                                        </span>
+                                                    </td>
+
+                                                    <td class="product-name">
+                                                        <a href="{% url 'product' item.product.id %}">{{ item.product.name }}</a>
+                                                    </td>
+
+                                                    <td class="product-price">
+                                                        <span class="amount">{{ item.product.price }}</span>
+                                                    </td>
+
+                                                    <td class="product-quantity">
+                                                        <span>{{ item.number_of_product }}</span>
+                                                    </td>
+
+                                                    <td class="product-subtotal">
+                                                        <span class="amount">{{ item.total_item_price }}</span>
+                                                    </td>
+                                                </tr>
+                                        {% endfor %}
+
+                            <form method="post" action="{% url 'checkout' %}">{% csrf_token %}
+                                        <tr>
+                                            <td class="actions" colspan="6">
+                                                <input type="submit" value="Proceed to Checkout" name="proceed" class="checkout-button button alt wc-forward">
+                                            </td>
+                                        </tr>
+                            </form>
+
+                                        {% for message in messages %}
+                                        <div class="message {{ message.tags }}">
+                                            {{ message }}
+                                        </div>
+                                        {% endfor %}
+                            <form method="post" action="{% url 'discount' %}">{% csrf_token %}
+                                        <tr>
+                                            <td class="actions" colspan="6">
+                                                <div class="coupon">
+                                                    {{ form.as_p }}
+                                                    <input type="submit" value="Apply Coupon" name="apply_coupon" class="button">
+                                                </div>
+                                            </td>
+                                        </tr>
+                            </form>
+                                    </tbody>
+                                </table>
+                            <div class="cart-collaterals">
+
+                            <div class="cart_totals ">
+                                <h2>Cart Totals</h2>
+
+                                <table cellspacing="0">
+                                    <tbody>
+                                        <tr class="cart-subtotal">
+                                            <th>Total</th>
+                                            <td><span class="amount" id="cart_sum">{{ cart.cart_total_price }}</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            </div>
+                        </div>                        
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    {% else %}
+    <h3 class="text-center">Your cart is empty</h3>
+    {% endif %}
+    {% else %}
+        <h3 class="text-center"><a href="{% url 'login' %}">Войдите</a> или <a href="{% url 'registration' %}">Зарегистрируйтесь</a></h3>
+    {% endif %}
+    </div>
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous">
+        </script>
+        <script>
+          $(document).ready(function(){
+            $(".del").on('click', function(e) {
+                e.preventDefault();
+                var product_id = $(this).attr('data-id');
+                data = {
+                    product_id: product_id
+                };
+                $.ajax({
+                    type: 'GET',
+                    url: {% url "cart:remove_from_cart" %},
+                    data: data,
+                    success: function(data) {
+                        $("#cart_count").html(data.cart_total);
+                        $("#cart_total_sum").html(data.cart_total_sum);
+                        $('.cart_item-'+product_id).css('display', 'none');
+                        $("#cart_sum").html(data.cart_sum);
+                        $("#cart_total_summ").html(data.cart_total_summ);
+                    }
+                });
+             });
+          });
+        </script>
+{% endblock %}
+

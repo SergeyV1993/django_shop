@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+    {% block content %}
+        <div class="product-big-title-area">
+         <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-bit-title text-center">
+                        <h2>Registration</h2>
+                    </div>
+                </div>
+            </div>
+         </div>
+        </div> <!-- End Page title area -->
+
+        <div class="product-bit-title text-center single-product-area">
+
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div>
+                    <button type="submit" class="btn btn-primary">Registration</button>
+                </div>
+            </form>
+
+        </div>
+    {% endblock %}

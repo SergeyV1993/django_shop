@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block content %}
+    <div class="product-big-title-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-bit-title text-center">
+                        <h2>Product</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="single-product-area">
+                <div class="col-md-8">
+                    <div class="product-content-right">
+                        <div class="product-breadcroumb">
+                            <a href="{% url 'shop' %}">Shop</a>
+                            <a href="{% url 'categories' categories_id=product.type.id %}">{{ product.type }}</a>
+                            <a href="{% url 'product' product.id %}">{{ product.name }}</a>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="product-images">
+                                    <div class="product-main-img">
+                                        {% for image_item in product.productimage_set.all %}
+                                             <img src="{{ image_item.image.url }}" style="width:450px; height: 450px">
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="product-inner">
+                                    <h2 class="product-name">{{ product.name }}</h2>
+                                    <div class="product-inner-price">
+                                        <ins>{{ product.price }}</ins> <del>$800.00</del>
+                                    </div>
+
+                                    <form action="#" class="cart" method="POST">
+                                        {% csrf_token %}
+                                        {% if request.user.is_authenticated %}
+                                        <div class="quantity">
+                                            <input type="number" size="4" class="input-text" id="qty" title="Qty" value="1" name="quantity" min="1" step="1">
+                                        </div>
+                                        <input type="submit" class="prod" data-id="{{ product.id }}" value="Add to cart">
+                                        {% else %}
+                                        <small class="text-center"><a href="{% url 'login' %}">Войдите</a> или <a href="{% url 'registration' %}">Зарегистрируйтесь</a></small>
+                                        {% endif %}
+                                    </form>
+
+                                    <div role="tabpanel">
+                                        <ul class="product-tab" role="tablist">
+                                            <li role="presentation" class="active"><a href="" aria-controls="home" role="tab" data-toggle="tab">Description</a></li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane fade in active" id="home">
+                                                <h2>Product Description</h2>
+                                                <p> {{ product.description }} </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+        <script>
+          $(document).ready(function(){
+            $(".prod").on('click', function(e) {
+                e.preventDefault();
+                var product_id = $(this).attr('data-id');
+                var quantity = document.getElementById("qty").value;
+                data = {
+                    product_id: product_id,
+                    quantity: quantity
+                };
+                $.ajax({
+                    type: 'POST',
+                    url: {% url "cart:add_to_cart" %},
+                    data: data,
+                    success: function(data) {
+                        $("#cart_count").html(data.cart_total);
+                        $("#cart_total_sum").html(data.cart_total_sum);
+                    }
+                });
+             });
+          });
+        </script>
+
+{% endblock %}
