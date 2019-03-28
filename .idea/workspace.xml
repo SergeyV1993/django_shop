@@ -2,193 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3568c18f-9e3d-4a06-9601-d89514b9c41b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/context_processors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/migrations/0002_remove_cartitem_image.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/migrations/0002_remove_cartitem_image.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/migrations/0003_auto_20180924_1918.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/migrations/0003_auto_20180924_1918.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/migrations/0004_auto_20180924_1929.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/migrations/0004_auto_20180924_1929.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/migrations/0005_auto_20181029_2036.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/migrations/0005_auto_20181029_2036.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/migrations/0006_auto_20181114_1941.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/migrations/0006_auto_20181114_1941.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/migrations/0007_auto_20181128_1947.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/migrations/0007_auto_20181128_1947.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/categories/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/categories/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/categories/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/categories/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/categories/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/categories/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discount/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/discount/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discount/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/discount/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discount/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/discount/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discount/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/discount/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/product_image/Koala.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/product_image/Koala.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/product_image/Koala_Ji8kl0T.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/product_image/Koala_Ji8kl0T.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/product_image/Koala_Ji8kl0T_80HR8Nd.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/product_image/Koala_Ji8kl0T_80HR8Nd.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/product_image/Koala_Ji8kl0T_HtI8QQi.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/product_image/Koala_Ji8kl0T_HtI8QQi.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/product_image/Koala_Ji8kl0T_HtI8QQi_adOvduB.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/product_image/Koala_Ji8kl0T_HtI8QQi_adOvduB.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/product_image/Koala_Ji8kl0T_HtI8QQi_adOvduB_CEcrrRc.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/product_image/Koala_Ji8kl0T_HtI8QQi_adOvduB_CEcrrRc.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/product_image/Koala_Ji8kl0T_PWnEEZk.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/product_image/Koala_Ji8kl0T_PWnEEZk.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/product_image/Koala_Ji8kl0T_atWCwYi.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/product_image/Koala_Ji8kl0T_atWCwYi.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/product_image/background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/product_image/background.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/product_image/background_1ajtHLH.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/product_image/background_1ajtHLH.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/product_image/background_1ajtHLH_zkpXlP9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/product_image/background_1ajtHLH_zkpXlP9.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/product_image/background_1ajtHLH_zkpXlP9_69MzGxG.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/product_image/background_1ajtHLH_zkpXlP9_69MzGxG.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/product_image/background_1ajtHLH_zkpXlP9_Ly7ANnV.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/product_image/background_1ajtHLH_zkpXlP9_Ly7ANnV.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/product_image/background_uYPfqWU.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/product_image/background_uYPfqWU.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/product_image/background_uYPfqWU_T4qktlq.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/product_image/background_uYPfqWU_T4qktlq.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/product_image/background_xF4IsWv.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/media/product_image/background_xF4IsWv.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0002_auto_20180702_1935.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0002_auto_20180702_1935.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0003_auto_20180702_2014.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0003_auto_20180702_2014.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0004_auto_20180703_1941.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0004_auto_20180703_1941.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0005_auto_20180911_1930.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0005_auto_20180911_1930.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0006_auto_20180911_2014.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0006_auto_20180911_2014.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0007_order_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0007_order_user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0008_auto_20181008_1949.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0008_auto_20181008_1949.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0009_remove_order_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0009_remove_order_user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0010_auto_20181024_1952.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0010_auto_20181024_1952.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0011_auto_20181029_2033.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0011_auto_20181029_2033.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0012_auto_20181029_2036.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0012_auto_20181029_2036.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0013_order_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0013_order_user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0014_auto_20181101_2004.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0014_auto_20181101_2004.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/0015_auto_20181129_1849.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/0015_auto_20181129_1849.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/context_processors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0002_product_price.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0002_product_price.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0003_auto_20180903_1950.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0003_auto_20180903_1950.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0004_auto_20180904_1921.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0004_auto_20180904_1921.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0005_auto_20180904_1924.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0005_auto_20180904_1924.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0006_remove_product_discount.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0006_remove_product_discount.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0007_product_discount.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0007_product_discount.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0008_auto_20180904_1936.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0008_auto_20180904_1936.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0009_auto_20180904_1950.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0009_auto_20180904_1950.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0010_auto_20180904_2002.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0010_auto_20180904_2002.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0011_auto_20180904_2008.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0011_auto_20180904_2008.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0012_auto_20180904_2012.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0012_auto_20180904_2012.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0013_auto_20180911_1930.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0013_auto_20180911_1930.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0014_auto_20181112_1941.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0014_auto_20181112_1941.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0015_auto_20181112_1942.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0015_auto_20181112_1942.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0016_auto_20181113_1903.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0016_auto_20181113_1903.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0017_auto_20181113_1908.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0017_auto_20181113_1908.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0018_auto_20181129_1918.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0018_auto_20181129_1918.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/0019_auto_20181205_1906.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/0019_auto_20181205_1906.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/registration/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/registration/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/registration/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration/migrations/0002_delete_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/registration/migrations/0002_delete_user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/registration/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/registration/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/registration/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_discount/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/service_discount/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_discount/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/service_discount/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_discount/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/service_discount/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service_discount/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/service_discount/view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/css/owl.carousel.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/css/owl.carousel.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/css/responsive.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/css/responsive.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/dynamic_cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/dynamic_cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/img/crossword.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/img/crossword.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/img/product-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/img/product-1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/img/product-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/img/product-2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/img/product-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/img/product-3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/img/product-4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/img/product-4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/img/product-5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/img/product-5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/img/product-6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/img/product-6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/img/product-thumb-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/img/product-thumb-1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/img/product-thumb-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/img/product-thumb-2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/img/product-thumb-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/img/product-thumb-3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/img/product-thumb-4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/img/product-thumb-4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/img/services_logo__1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/img/services_logo__1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/img/services_logo__2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/img/services_logo__2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/img/services_logo__3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/img/services_logo__3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/img/services_logo__4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/img/services_logo__4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/img/slide-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/img/slide-1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/img/slide-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/img/slide-2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/img/slide-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/img/slide-3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/js/jquery.easing.1.3.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/js/jquery.easing.1.3.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/js/jquery.sticky.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/js/jquery.sticky.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/js/owl.carousel.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/js/owl.carousel.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/home/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/home/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/css/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/css/font-awesome.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/css/ie.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/css/ie.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/css/loader.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/css/loader.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/css/normalize.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/css/normalize.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/fonts/FontAwesome.otf" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/fonts/FontAwesome.otf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/fonts/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/fonts/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/fonts/fontawesome-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/images/background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/images/background.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/images/clouds/cloud-01.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/images/clouds/cloud-01.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/images/clouds/cloud-02.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/images/clouds/cloud-02.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/images/flakes/depth1/flakes1.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/images/flakes/depth1/flakes1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/images/flakes/depth1/flakes2.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/images/flakes/depth1/flakes2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/images/flakes/depth1/flakes3.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/images/flakes/depth1/flakes3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/images/flakes/depth1/flakes4.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/images/flakes/depth1/flakes4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/images/flakes/depth2/flakes1.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/images/flakes/depth2/flakes1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/images/flakes/depth2/flakes2.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/images/flakes/depth2/flakes2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/images/flakes/depth3/flakes1.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/images/flakes/depth3/flakes1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/images/flakes/depth3/flakes2.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/images/flakes/depth3/flakes2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/images/flakes/depth3/flakes3.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/images/flakes/depth3/flakes3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/images/flakes/depth3/flakes4.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/images/flakes/depth3/flakes4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/images/flakes/depth4/flakes.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/images/flakes/depth4/flakes.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/images/flakes/depth5/flakes.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/images/flakes/depth5/flakes.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/images/sphere.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/images/sphere.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/js/jquery.countdown.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/js/jquery.countdown.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/js/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/js/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/landing/js/plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/landing/js/plugins.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/account/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cart/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/categories/categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categories/categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contacts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/order/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/order/checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/order/thanks.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/order/thanks.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/shop/shop.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shop/shop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -201,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/login/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+            <state relative-caret-position="270">
+              <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -263,11 +77,11 @@
     <frame x="-3" y="-1" width="1372" height="745" extended-state="6" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24944155" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24944155" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" weight="0.32847896" />
       <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32847896" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32847896" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -284,8 +98,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/login/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+        <state relative-caret-position="270">
+          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>
