@@ -5,6 +5,7 @@ from .models import *
 @admin.register(CartItem)
 class CartItemAdmin(admin.ModelAdmin):
     list_display = [field.name for field in CartItem._meta.fields]
+    search_fields = ['product']
 
     class Meta:
         model = CartItem

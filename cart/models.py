@@ -1,10 +1,15 @@
 from products.models import *
 from django.contrib.auth.models import UserManager
 
+
 class CartItem(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    number_of_product = models.IntegerField(default=0)
-    total_item_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='Товар')
+    number_of_product = models.IntegerField(default=0, verbose_name='Количество товара')
+    total_item_price = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name='Общая сумма за товар')
+
+    class Meta:
+        verbose_name_plural = 'Товары в корзине'
+        verbose_name = 'Товар в корзине'
 
     def __str__(self):
         try:
