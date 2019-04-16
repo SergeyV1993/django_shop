@@ -18,4 +18,5 @@ from . import views
 
 urlpatterns = [
     re_path(r'^login/$', views.login_view, name='login'),
+    #re_path(r'^change_password/$', views.change_password, name='change_password'), # использовать только с вьюхой change_password
 ]

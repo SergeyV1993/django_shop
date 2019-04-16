@@ -1,8 +1,11 @@
 from django.shortcuts import *
 from .forms import LoginForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, update_session_auth_hash
 from django.http import *
 from django.core.mail import send_mail
+#from django.contrib.auth.forms import PasswordChangeForm
+#from django.contrib import messages
+#from django.contrib.auth.decorators import login_required
 
 
 def login_view(request):
@@ -28,3 +31,22 @@ def login_view(request):
     else:
         form = LoginForm()
     return render(request, 'login/login.html', locals())
+
+'''
+#как альтернативный вариант PasswordChangeView
+@login_required
+def change_password(request):
+
+    if request.method == 'POST':
+        form = PasswordChangeForm(user=request.user, data=request.POST)
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, form.user)
+            return HttpResponseRedirect(reverse('shop'))
+        else:
+            messages.error(request, 'Please correct the error below.')
+    else:
+        form = PasswordChangeForm(request.user)
+
+    return render(request, 'password/change_password.html', locals())
+'''
