@@ -40,16 +40,18 @@
                     <div class="user-menu">
                         <ul>
                             {% if request.user.is_authenticated %}
-                                <li><a href="{% url "account" %}"><i class="fa fa-user"></i> My Account</a></li>
+                                <li><a href="{% url 'account' %}"><i class="fa fa-user"></i> My Account</a></li>
                                 <li><a href="{% url 'cart:cart_view' %}"><i class="fa fa-user"></i> My Cart</a></li>
                                 {% if cart.items.count > 0 %}
                                     <li><a href="{% url 'checkout' %}"><i class="fa fa-user"></i> Checkout</a></li>
                                 {% endif %}
-                                <li><a href="{% url "logout" %}"><i class="fa fa-user"></i> Logout</a></li>
+                                <li><a href="{% url 'change_password' %}"><i class="fa fa-user"></i>Change Password</a></li>
+                                <li><a href="{% url 'logout' %}"><i class="fa fa-user"></i> Logout</a></li>
                             {% else %}
                                 <li><a href="{% url 'login' %}"><i class="fa fa-user"></i> Login</a></li>
                                 <li><a href="{% url 'registration' %}"><i class="fa fa-heart"></i> Registration</a></li>
                             {% endif %}
+                            <li><a href="{% url 'reset_password' %}"><i class="fa fa-user"></i>Reset Password</a></li>
                         </ul>
                     </div>
                 </div>
