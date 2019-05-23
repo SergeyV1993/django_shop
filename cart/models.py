@@ -26,9 +26,13 @@ class CartItem(models.Model):
 
 class Cart(models.Model):
     items = models.ManyToManyField(CartItem, blank=True, db_index=True)
-    cart_total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    cart_total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0, verbose_name='Сумма')
 
     objects = UserManager()
+
+    class Meta:
+        verbose_name_plural = 'Корзина'
+        verbose_name = 'Корзина'
 
     def __str__(self):
         try:
