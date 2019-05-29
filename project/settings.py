@@ -57,8 +57,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.cache.UpdateCacheMiddleware',
-    'django.middleware.cache.FetchFromCacheMiddleware',
+    #'django.middleware.cache.UpdateCacheMiddleware',
+    #'django.middleware.cache.FetchFromCacheMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -97,14 +97,14 @@ DATABASES = {
 }
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
+'''
 CACHES = {
     'default': {
         #'BACKEND': 'django.core.cache.backends.locmem.LocMemCache', №сохраняет кэш в оперативке
          'BACKEND': 'django.core.cache.backends.dummy.DummyCache', #не сохраняет кэш, нужен для отладки
     }
 }
-
+'''
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
