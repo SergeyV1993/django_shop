@@ -2,7 +2,8 @@ from django.shortcuts import *
 from .forms import LoginForm
 from django.contrib.auth import login, authenticate, update_session_auth_hash
 from django.http import *
-from django.core.mail import send_mail
+from .task import send_mail_login
+
 #from django.contrib.auth.forms import PasswordChangeForm
 #from django.contrib import messages
 #from django.contrib.auth.decorators import login_required
@@ -19,9 +20,7 @@ def login_view(request):
             if login_user:
                 login(request, login_user)
 
-                subject = 'Авторизация на сайте'
-                message = 'Выполнен вход'
-                send_mail(subject, message, 'sergey.vlasov333@gmail.com', ['sergey.vlasov333@yandex.ru'])
+                send_mail_login.delay(username)
 
                 return HttpResponseRedirect(reverse('shop'))
             else:
