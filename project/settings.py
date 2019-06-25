@@ -107,30 +107,42 @@ CACHES = {
 '''
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': True,
+    'disable_existing_loggers': False,
     'formatters': {
         'simple': {
-            'format': '[%(asctime)s] %(levelname)s: %(message)s',
+            'format': '[%(asctime)s] %(levelname)s: %(message)s \n',
             'datefmt': '%Y.%m.%d %H:%M:%S',
         }
     },
     'handlers': {
         'file': {
             'class': 'logging.FileHandler',
-            'level': 'ERROR',
             'formatter': 'simple',
             'filename': os.path.join(BASE_DIR, 'test.log'),
         },
         'console': {
             'class': 'logging.StreamHandler',
-            'level': 'ERROR',
             'formatter': 'simple',
-        }
+        },
+        'file_sql': {
+            'class': 'logging.FileHandler',
+            'formatter': 'simple',
+            'filename': os.path.join(BASE_DIR, 'file_sql.log'),
+        },
 
     },
     'loggers': {
         'django': {
-            'handlers': ['file', 'console'],
+            'level': 'DEBUG',
+            'handlers': ['console'],
+        },
+        'django.db.backends': {
+            'level': 'DEBUG',
+            'handlers': ['file_sql'],
+        },
+        'django.request': {
+            'level': 'ERROR',
+            'handlers': ['file'],
         }
     }
 }
