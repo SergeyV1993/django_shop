@@ -4,8 +4,8 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 def shop(request):
-    products = ProductImage.objects.select_related('product').filter(is_active=True)
-    categories = ProductCategory.objects.select_related().only('name').all()
+    products = ProductImage.objects.select_related('product').only('product__name', 'product__price', 'image').filter(is_active=True)
+    #categories = ProductCategory.objects.select_related().only('name').all()
 
     paginator = Paginator(products, 25)
     page = request.GET.get('page')

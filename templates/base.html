@@ -1,4 +1,5 @@
 {% load static %}
+{% load cache %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,12 +25,9 @@
     <link rel="stylesheet" href="{% static 'home/style.css' %}">
     <link rel="stylesheet" href="{% static 'home/css/responsive.css' %}">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
   </head>
   <body>
 
@@ -41,8 +39,8 @@
                         <ul>
                             {% if request.user.is_authenticated %}
                                 <li><a href="{% url 'account' %}"><i class="fa fa-user"></i> My Account</a></li>
-                                <li><a href="{% url 'cart:cart_view' %}"><i class="fa fa-user"></i> My Cart</a></li>
                                 {% if cart.items.count > 0 %}
+                                    <li><a href="{% url 'cart:cart_view' %}"><i class="fa fa-user"></i> My Cart</a></li>
                                     <li><a href="{% url 'checkout' %}"><i class="fa fa-user"></i> Checkout</a></li>
                                 {% endif %}
                                 <li><a href="{% url 'change_password' %}"><i class="fa fa-user"></i>Change Password</a></li>
@@ -108,7 +106,9 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
-          <a href='{% url 'cart:cart_view' %}' class="btn btn-default">Корзина</a>
+          {% if cart.items.count > 0 %}
+              <a href='{% url 'cart:cart_view' %}' class="btn btn-default">Корзина</a>
+          {% endif %}
       </div>
     </div>
   </div>
@@ -134,7 +134,9 @@
                         <li><a href="{% url 'home' %}">Home</a></li>
                         <li><a href="{% url 'shop' %}">Shop page</a></li>
                         {% if request.user.is_authenticated %}
-                        <li><a href="{% url 'cart:cart_view' %}">Cart</a></li>
+                          {% if cart.items.count > 0 %}
+                            <li><a href="{% url 'cart:cart_view' %}">Cart</a></li>
+                          {% endif %}
                         {% endif %}
                         <li class="select2-dropdown">
                             <div class="btn-group">
@@ -143,9 +145,11 @@
                                      <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
+                                    {% cache 500 cat %}
                                      {% for category in cat %}
                                           <li><a href="{% url 'categories' categories_id=category.id %}">{{ category.name }}</a></li>
                                      {% endfor %}
+                                    {% endcache %}
                                 </ul>
                             </div>
                         </li>

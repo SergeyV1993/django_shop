@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'debug_toolbar',
     'registration',
     'orders',
     'products',
@@ -100,8 +101,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 '''
 CACHES = {
     'default': {
-        #'BACKEND': 'django.core.cache.backends.locmem.LocMemCache', №сохраняет кэш в оперативке
-         'BACKEND': 'django.core.cache.backends.dummy.DummyCache', #не сохраняет кэш, нужен для отладки
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache', #сохраняет кэш в оперативке
+        # 'BACKEND': 'django.core.cache.backends.dummy.DummyCache', #не сохраняет кэш, нужен для отладки
     }
 }
 '''
@@ -133,7 +134,7 @@ LOGGING = {
     },
     'loggers': {
         'django': {
-            'level': 'DEBUG',
+            'level': 'CRITICAL',
             'handlers': ['console'],
         },
         'django.db.backends': {
@@ -146,6 +147,11 @@ LOGGING = {
         }
     }
 }
+
+DEBUG_TOOLBAR_PANELS = [
+    'debug_toolbar.panels.profiling.ProfilingPanel',
+]
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
@@ -198,3 +204,42 @@ REDIS_PORT = '6379'
 BROKER_URL = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
 BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
 CELERY_RESULT_BACKEND = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
+
+
+CACHES = {
+    'default': {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/1',
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+SESSION_CACHE_ALIAS = "default"
+
+if DEBUG:
+   INTERNAL_IPS = ('127.0.0.1', 'localhost',)
+   MIDDLEWARE += [
+       'debug_toolbar.middleware.DebugToolbarMiddleware',
+   ]
+
+   DEBUG_TOOLBAR_PANELS = [
+       'debug_toolbar.panels.versions.VersionsPanel',
+       'debug_toolbar.panels.timer.TimerPanel',
+       'debug_toolbar.panels.settings.SettingsPanel',
+       'debug_toolbar.panels.headers.HeadersPanel',
+       'debug_toolbar.panels.request.RequestPanel',
+       'debug_toolbar.panels.sql.SQLPanel',
+       'debug_toolbar.panels.staticfiles.StaticFilesPanel',
+       'debug_toolbar.panels.templates.TemplatesPanel',
+       'debug_toolbar.panels.cache.CachePanel',
+       'debug_toolbar.panels.signals.SignalsPanel',
+       'debug_toolbar.panels.logging.LoggingPanel',
+       'debug_toolbar.panels.redirects.RedirectsPanel',
+   ]
+
+   DEBUG_TOOLBAR_CONFIG = {
+       'INTERCEPT_REDIRECTS': False,
+   }

@@ -2,5 +2,5 @@ from products.models import *
 
 
 def categories(request):
-    cat = ProductCategory.objects.select_related().only('name').all()
+    cat = ProductCategory.objects.only('name').all()
     return {'cat': cat}
