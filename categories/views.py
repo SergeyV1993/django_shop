@@ -5,7 +5,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def categories(request,categories_id):
     categories = ProductCategory.objects.get(id=categories_id)
-    product = Product.objects.select_related('type').filter(type=categories)
+    product = ProductImage.objects.select_related('product').only('product__name', 'product__price', 'image').filter(product__type=categories)
 
     paginator = Paginator(product, 25)
     page = request.GET.get('page')

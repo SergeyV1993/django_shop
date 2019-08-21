@@ -23,20 +23,18 @@
 
                      <div class="single-shop-product">
                          <div class="product-upper">
-                             {% for image_item in product.productimage_set.all %}
-                                 <img src="{{ image_item.image.url }}" style="width:250px; height: 250px">
-                             {% endfor %}
+                             <img src="{{ product.image.url }}" style="width:250px; height: 250px">
                          </div>
 
                          <h2>
                              <a href="{% url 'product' product.id %}">
-                                 {{ product.name }}
+                                 {{ product.product.name }}
                              </a>
                          </h2>
 
                          <div class="product-carousel-price">
                              <p>
-                                 {{ product.price }} RUB
+                                 {{ product.product.price }} RUB
                              </p>
                          </div>
 
