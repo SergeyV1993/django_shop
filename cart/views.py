@@ -22,13 +22,15 @@ def initialize_cart(request):
 
 @csrf_exempt
 def cart_view(request):
-    cart = Cart.objects.prefetch_related('items').get(id=request.session['cart_id'])
-    form = DiscountForm(request.POST or None)
-    context = {
-        'cart': cart,
-        'form': form
-    }
-    return render(request, 'cart/cart.html', context)
+    if 'cart_id' in request.session:
+        cart = Cart.objects.prefetch_related('items').get(id=request.session['cart_id'])
+        form = DiscountForm(request.POST or None)
+        context = {
+            'cart': cart,
+            'form': form
+        }
+        return render(request, 'cart/cart.html', context)
+    return render(request, 'cart/cart.html')
 
 
 @csrf_exempt
