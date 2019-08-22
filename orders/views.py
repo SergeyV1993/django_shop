@@ -1,16 +1,15 @@
 from django.shortcuts import render
 from .forms import *
-from cart.views import initialize_cart
+from cart.models import Cart
 
 
 def checkout(request):
-    cart = initialize_cart(request)
     form = OrderForm(request.POST or None)
     return render(request, 'order/checkout.html', locals())
 
 
 def make_order(request):
-    cart = initialize_cart(request)
+    cart = Cart.objects.prefetch_related('items__product').get(id=request.session['cart_id'])
 
     if request.method == "POST":
         form = OrderForm(request.POST or None)

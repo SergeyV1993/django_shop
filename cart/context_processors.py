@@ -3,7 +3,7 @@ from . models import *
 
 def cart(request):
     if 'cart_id' in request.session:
-        cart = Cart.objects.prefetch_related('items').get(id=request.session['cart_id'])
+        cart = Cart.objects.prefetch_related('items__product').get(id=request.session['cart_id'])
         return {'cart': cart,
                 'cart_total': cart.items.count(),
                 'cart_total_sum': cart.cart_total_price
