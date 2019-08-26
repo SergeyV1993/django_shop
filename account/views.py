@@ -4,12 +4,12 @@ from orders.models import *
 
 def account_view(request):
     if request.user.is_authenticated:
-        order = Order.objects.select_related('status').filter(user=request.user).order_by('-id')
+        order = Order.objects.select_related('status').filter(user=request.user).order_by('-id').prefetch_related('productinorder_set')
         context = {
-            'order': order
+            'order': order,
         }
         return render(request, 'account/account.html', context)
     else:
-        return render(request, 'account/account.html', locals())
+        return render(request, 'account/account.html')
 
 

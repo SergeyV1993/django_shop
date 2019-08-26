@@ -9,6 +9,8 @@ def checkout(request):
 
 
 def make_order(request):
+    if 'cart_id' not in request.session:
+        return render(request, 'order/thanks.html')
     cart = Cart.objects.prefetch_related('items__product').get(id=request.session['cart_id'])
 
     if request.method == "POST":
@@ -31,7 +33,7 @@ def make_order(request):
         form = OrderForm()
 
     del request.session['cart_id']
-    del request.session['total']
+    #del request.session['total']
     return render(request, 'order/thanks.html', locals())
 
 
