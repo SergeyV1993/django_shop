@@ -4,7 +4,7 @@ from orders.models import *
 
 def account_view(request):
     if request.user.is_authenticated:
-        order = Order.objects.select_related('status').filter(user=request.user).order_by('-id').prefetch_related('productinorder_set')
+        order = Order.objects.select_related('status').filter(user=request.user).order_by('-id').prefetch_related('productinorder_set__product')
         context = {
             'order': order,
         }
