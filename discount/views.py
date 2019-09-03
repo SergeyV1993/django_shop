@@ -41,4 +41,10 @@ def discount_view(request):
                 messages.error(request, 'такого промокода не существует')
     else:
         form = DiscountForm()
-    return render(request, 'cart/cart.html', locals())
+
+    context = {
+        'cart': cart,
+        'messages': messages,
+        'form': form,
+    }
+    return render(request, 'cart/cart.html', context)

@@ -16,4 +16,9 @@ def categories(request,categories_id):
     except EmptyPage:
         products_of_category = paginator.page(paginator.num_pages)
 
-    return render(request, 'categories/categories.html', locals())
+    context = {
+        'categories': categories,
+        'products_of_category': products_of_category,
+    }
+
+    return render(request, 'categories/categories.html', context)

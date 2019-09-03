@@ -5,7 +5,6 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def shop(request):
     products = ProductImage.objects.select_related('product').only('product__name', 'product__price', 'image').filter(is_active=True)
-    #categories = ProductCategory.objects.select_related().only('name').all()
 
     paginator = Paginator(products, 25)
     page = request.GET.get('page')
@@ -16,5 +15,10 @@ def shop(request):
     except EmptyPage:
         products_image = paginator.page(paginator.num_pages)
 
-    return render(request, 'shop/shop.html', locals())
+    context = {
+        'products': products,
+        'products_image': products_image,
+    }
+
+    return render(request, 'shop/shop.html', context)
 

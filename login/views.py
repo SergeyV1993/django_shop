@@ -29,7 +29,11 @@ def login_view(request):
             return HttpResponseRedirect(reverse('login'))
     else:
         form = LoginForm()
-    return render(request, 'login/login.html', locals())
+
+    context = {
+        'form': form,
+    }
+    return render(request, 'login/login.html', context)
 
 '''
 #как альтернативный вариант PasswordChangeView

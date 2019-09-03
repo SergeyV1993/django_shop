@@ -5,7 +5,10 @@ from cart.models import Cart
 
 def checkout(request):
     form = OrderForm(request.POST or None)
-    return render(request, 'order/checkout.html', locals())
+    context = {
+        'form': form,
+    }
+    return render(request, 'order/checkout.html', context)
 
 
 def make_order(request):
@@ -29,12 +32,15 @@ def make_order(request):
                                               is_active=True)
             order.total_price = cart.cart_total_price
             order.save()
+            context = {
+                'cart': cart,
+                'order': order,
+            }
     else:
         form = OrderForm()
 
     del request.session['cart_id']
-    #del request.session['total']
-    return render(request, 'order/thanks.html', locals())
+    return render(request, 'order/thanks.html', context)
 
 
 

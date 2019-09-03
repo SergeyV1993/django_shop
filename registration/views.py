@@ -28,4 +28,8 @@ def registration(request):
     else:
         form = UserForm()
 
-    return render(request, 'registration/registration.html', locals())
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'registration/registration.html', context)
