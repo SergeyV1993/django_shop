@@ -19,4 +19,5 @@ from account import views
 
 urlpatterns = [
     re_path(r'^account/$', views.account_view, name='account'),
+    re_path(r'^account_delete/$', views.delete_account, name='account_delete'),
 ]
