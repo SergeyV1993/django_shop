@@ -52,14 +52,14 @@
                      </div>
                  </div>
                 {% endfor %}
-            
+            {% if is_paginated %}
             <div class="row">
                 <div class="col-md-12">
                     <div class="product-pagination text-center">
                         <nav>
                           <ul class="pagination">
                             <li>
-                                {% if products_image.has_previous %}
+                                {% if page_obj.has_previous %}
                                     <a href="?page={{ products_image.previous_page_number }}" aria-label="Previous">
                                         <span aria-hidden="true">&laquo;</span>
                                     </a>
@@ -67,12 +67,12 @@
                             </li>
 
 
-                            {% for num_page in products_image.paginator.page_range %}
+                            {% for num_page in page_obj.paginator.page_range %}
                                 <li><a href="?page={{ num_page }}">{{ num_page }}</a></li>
                             {% endfor %}
 
                             <li>
-                                {% if products_image.has_next %}
+                                {% if page_obj.has_next %}
                                     <a href="?page={{ products_image.next_page_number }}" aria-label="Next">
                                         <span aria-hidden="true">&raquo;</span>
                                     </a>
@@ -83,6 +83,7 @@
                     </div>
                 </div>
             </div>
+                {% endif %}
         </div>
     </div>
     </div>
