@@ -1,10 +1,49 @@
-from django.shortcuts import render
+#from django.shortcuts import render
 from products.models import *
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.http import Http404
+from django.views.generic import *
 
 
-def categories(request,categories_id):
-    categories = ProductCategory.objects.get(id=categories_id)
+class CategoryView(DetailView):
+    model = ProductCategory
+    template_name = 'categories/categories.html'
+    pk_url_kwarg = 'categories_id'
+    paginate_by = 1
+
+    def get_object(self):
+        try:
+            catagory_id = self.kwargs.get('categories_id')
+            return ProductCategory.objects.get(id=catagory_id)
+        except ProductCategory.DoesNotExist:
+            raise Http404("Category does not exist")
+
+    def get_context_data(self, **kwargs):
+        product = ProductImage.objects.select_related('product').only('product__name', 'product__price',
+                                                                      'image').filter(product__type=self.get_object())
+        paginator = Paginator(product, self.paginate_by)
+        page = self.request.GET.get('page')
+        try:
+            products_of_category = paginator.page(page)
+        except PageNotAnInteger:
+            products_of_category = paginator.page(1)
+        except EmptyPage:
+            products_of_category = paginator.page(paginator.num_pages)
+
+        context = super(CategoryView, self).get_context_data(**kwargs)
+        context['categories'] = self.get_object()
+        context['products_of_category'] = products_of_category
+        return context
+
+
+'''
+#аналогично коду выше только функция
+def categories(request, categories_id):
+    try:
+        categories = ProductCategory.objects.get(id=categories_id)
+    except ProductCategory.DoesNotExist:
+        raise Http404("Category does not exist")
+
     product = ProductImage.objects.select_related('product').only('product__name', 'product__price', 'image').filter(product__type=categories)
 
     paginator = Paginator(product, 25)
@@ -22,3 +61,4 @@ def categories(request,categories_id):
     }
 
     return render(request, 'categories/categories.html', context)
+'''
