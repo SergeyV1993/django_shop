@@ -3,6 +3,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from discount.forms import *
 from . models import *
+from django.views.generic import *
 
 
 def initialize_cart(request):
@@ -18,6 +19,43 @@ def initialize_cart(request):
         request.session['cart_id'] = cart_id
         cart = Cart.objects.prefetch_related('items').get(id=cart_id)
     return cart
+
+
+class CartView(FormView):
+    form_class = DiscountForm
+    template_name = 'cart/cart.html'
+
+    def get_context_data(self):
+        context = super(CartView, self).get_context_data()
+        if 'cart_id' in self.request.session:
+            form = self.form_class(self.request.POST or None)
+            context['form'] = form
+        return context
+
+
+class AddToCartView(CreateView):
+    #template_name = 'cart/cart.html'
+
+    def post(self):
+        cart = initialize_cart(self.request)
+        product_id = self.request.POST.get("product_id")
+        qty = int(self.request.POST.get("quantity"))
+        product = Product.objects.select_related('type').get(id=product_id)
+
+        new_item, _ = CartItem.objects.select_related('product').get_or_create(product=product,
+                                                                               number_of_product=qty)
+        new_item.save()
+
+        if new_item not in cart.items.all():
+            cart.items.add(new_item)
+            cart.cart_total_price += new_item.total_item_price
+            cart.save()
+        return JsonResponse({
+            'cart_total': cart.items.count(),
+            'cart_total_sum': cart.cart_total_price,
+            'cart_total_summ': cart.cart_total_price
+        })
+
 
 
 @csrf_exempt

@@ -1,9 +1,19 @@
-version: '2'
+version: '3.3'
 services:
-    web:
-        build: .
+    shop:
+        build: django_shop/
         command: python3 manage.py runserver 0.0.0.0:8000
         ports:
           - '8000:8000'
         volumes:
           - .:/shop
+
+    discount_service:
+        build: service_discount/
+        command: python3 manage.py runserver 0.0.0.0:8080
+        ports:
+          - '8080:8080'
+        volumes:
+          - .:/service
+        depends_on:
+          - shop

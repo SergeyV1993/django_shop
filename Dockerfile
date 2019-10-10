@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:latest
 RUN mkdir /shop
 WORKDIR /shop
 ADD requirements.txt /shop
