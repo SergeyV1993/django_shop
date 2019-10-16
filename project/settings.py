@@ -20,7 +20,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY_SHOP']
+#SECRET_KEY = os.environ['SECRET_KEY_SHOP']
+SECRET_KEY = '-r)97n$0o@kx%vlav1u@vqfo8aut^*jx1%jrktbw2x4l2whs=9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -198,6 +199,7 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = '/media/'
 
+'''
 # REDIS related settings
 REDIS_HOST = 'localhost'
 REDIS_PORT = '6379'
@@ -215,6 +217,7 @@ CACHES = {
         }
     }
 }
+'''
 
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "default"

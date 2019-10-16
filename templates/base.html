@@ -145,11 +145,9 @@
                                      <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    {% cache 500 cat %}
                                      {% for category in cat %}
                                           <li><a href="{% url 'categories' categories_id=category.id %}">{{ category.name }}</a></li>
                                      {% endfor %}
-                                    {% endcache %}
                                 </ul>
                             </div>
                         </li>

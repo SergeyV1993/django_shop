@@ -11,7 +11,8 @@ def post_request(cart, code, amount_cart, cookie):
     url = "http://127.0.0.1:8000/api/v1/discount_cart"
     body = {"cart": cart, "code": code, "amount_cart": float(amount_cart)}
     headers = {'Content-Type': 'application/json',
-               'Authorization': os.environ['TOKEN_AUTH'],
+               #'Authorization': os.environ['TOKEN_AUTH'],
+               'Authorization': 'Token 07237f5ec1bb992f273e8f12db5f9c6924b86476',
                'Connection': 'keep-alive'
                }
     response = requests.post(url, json=body, headers=headers, cookies=cookie)
