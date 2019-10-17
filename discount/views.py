@@ -8,7 +8,7 @@ import os
 
 
 def post_request(cart, code, amount_cart, cookie):
-    url = "http://127.0.0.1:8000/api/v1/discount_cart"
+    url = "http://127.0.0.1:8080/api/v1/discount_cart"
     body = {"cart": cart, "code": code, "amount_cart": float(amount_cart)}
     headers = {'Content-Type': 'application/json',
                #'Authorization': os.environ['TOKEN_AUTH'],
