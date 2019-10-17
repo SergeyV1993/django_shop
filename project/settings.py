@@ -32,8 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.admin',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -200,6 +200,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = '/media/'
 
 '''
+#запускать аккуратно, только после запуска redis-server, иначе авторизации зависнут
 # REDIS related settings
 REDIS_HOST = 'localhost'
 REDIS_PORT = '6379'
@@ -218,7 +219,6 @@ CACHES = {
     }
 }
 '''
-
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "default"
 

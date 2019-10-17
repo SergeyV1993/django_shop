@@ -19,8 +19,8 @@ def login_view(request):
             login_user = authenticate(username=username, password=password)
             if login_user:
                 login(request, login_user)
-
-                send_mail_login.delay(username)
+                #вызывать аккуратно, только после того как запустил redis-server
+                #send_mail_login.delay(username)
 
                 return HttpResponseRedirect(reverse('shop'))
             else:
