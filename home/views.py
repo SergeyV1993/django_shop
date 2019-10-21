@@ -1,4 +1,3 @@
-#from django.shortcuts import render
 from django.views.generic import TemplateView
 
 
@@ -11,6 +10,8 @@ class ContactsView(TemplateView):
 
 '''
 #Вариант с функциями
+from django.shortcuts import render
+
 def home(request):
     return render(request, 'home/home.html')
 

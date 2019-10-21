@@ -1,4 +1,3 @@
-#from django.shortcuts import render
 from products.models import *
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import Http404
@@ -38,6 +37,8 @@ class CategoryView(DetailView):
 
 '''
 #аналогично коду выше только функция
+from django.shortcuts import render
+
 def categories(request, categories_id):
     try:
         categories = ProductCategory.objects.get(id=categories_id)

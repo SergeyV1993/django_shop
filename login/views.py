@@ -1,13 +1,30 @@
-from django.shortcuts import *
 from .forms import LoginForm
-from django.contrib.auth import login, authenticate, update_session_auth_hash
-from django.http import *
-from .task import send_mail_login
+from django.contrib.auth import *
+from django.contrib.auth.views import *
 
-#from django.contrib.auth.forms import PasswordChangeForm
-#from django.contrib import messages
-#from django.contrib.auth.decorators import login_required
 
+class LoginUser(LoginView):
+
+    template_name = 'login/login.html'
+    form_class = LoginForm
+    success_url = 'shop/shop.html'
+
+    def form_valid(self, form):
+        username = form.cleaned_data['username']
+        password = form.cleaned_data['password']
+        login_user = authenticate(username=username, password=password)
+        if login_user:
+            login(self.request, login_user)
+            # вызывать аккуратно, только после того как запустил redis-server, иначе зависание
+            # from .task import send_mail_login
+            # send_mail_login.delay(username)
+
+            return HttpResponseRedirect(reverse('shop'))
+
+'''
+#Вариант реализации с функциями
+#from django.shortcuts import *
+#from django.http import *
 
 def login_view(request):
     form = LoginForm(request.POST or None)
@@ -19,7 +36,7 @@ def login_view(request):
             login_user = authenticate(username=username, password=password)
             if login_user:
                 login(request, login_user)
-                #вызывать аккуратно, только после того как запустил redis-server
+                #вызывать аккуратно, только после того как запустил redis-server, иначе зависание
                 #send_mail_login.delay(username)
 
                 return HttpResponseRedirect(reverse('shop'))
@@ -34,9 +51,13 @@ def login_view(request):
         'form': form,
     }
     return render(request, 'login/login.html', context)
-
+'''
 '''
 #как альтернативный вариант PasswordChangeView
+from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+
 @login_required
 def change_password(request):
 

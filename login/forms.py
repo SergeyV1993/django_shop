@@ -7,6 +7,9 @@ class LoginForm(forms.Form):
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
 
+    def __init__(self, request, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
     def clean(self):
 
         username = self.cleaned_data['username']
@@ -18,4 +21,5 @@ class LoginForm(forms.Form):
         user = User.objects.get(username=username)
         if user and not user.check_password(password):
             raise forms.ValidationError('Неверный пароль')
+
 
