@@ -18,6 +18,7 @@ from shop.views import *
 
 
 urlpatterns = [
-    #re_path(r'^shop/$', views.shop, name='shop'), //для функции
     re_path(r'^shop/$', ShopView.as_view(), name='shop'),
+    # для функции
+    # re_path(r'^shop/$', views.shop, name='shop'),
 ]

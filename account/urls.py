@@ -14,13 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import re_path
-from account import views
 from .views import *
 
 
 urlpatterns = [
-    #re_path(r'^account/$', views.account_view, name='account'), //для функции
-    #re_path(r'^account_delete/$', views.delete_account, name='account_delete'),
     re_path(r'^account/$', AccountView.as_view(), name='account'),
     re_path(r'^account_delete/$', AccountDeleteView.as_view(), name='account_delete'),
+    # для реализации с функциями
+    # from account import views
+    # re_path(r'^account/$', views.account_view, name='account'),
+    # re_path(r'^account_delete/$', views.delete_account, name='account_delete'),
 ]

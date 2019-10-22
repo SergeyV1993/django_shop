@@ -1,5 +1,3 @@
-#from django.shortcuts import render
-#from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from products.models import *
 from django.views.generic import *
 
@@ -10,6 +8,8 @@ class ShopView(ListView):
     queryset = model.objects.select_related('product').only('product__name', 'product__price', 'image').filter(is_active=True)
     paginate_by = 25
     context_object_name = 'products_image'
+
+
 '''
 #как запасной вариант для пагинатора
     def get_context_data(self, **kwargs):
@@ -29,6 +29,9 @@ class ShopView(ListView):
 
 '''
 #Та же самая реализация, только функцией
+from django.shortcuts import render
+from django.core.paginator import *
+
 def shop(request):
     products = ProductImage.objects.select_related('product').only('product__name', 'product__price', 'image').filter(is_active=True)
 

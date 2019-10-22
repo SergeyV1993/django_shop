@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.urls import re_path
 from categories.views import *
-#from . import views #для функции
 
 urlpatterns = [
-    #re_path(r'^categories/(?P<categories_id>\w+)/$', views.categories, name='categories'), #для функции
     re_path(r'^categories/(?P<categories_id>\w+)/$', CategoryView.as_view(), name='categories'),
+    # для функции
+    # from . import views
+    # re_path(r'^categories/(?P<categories_id>\w+)/$', views.categories, name='categories'),
 
 ]

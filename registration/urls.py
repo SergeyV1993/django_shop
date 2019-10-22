@@ -17,6 +17,7 @@ from django.urls import re_path
 from .views import *
 
 urlpatterns = [
-    #re_path(r'^registration/$', views.registration, name='registration'), //вариант для функции
     re_path(r'^registration/$', RegistrationView.as_view(), name='registration'),
+    # для функции
+    #re_path(r'^registration/$', views.registration, name='registration'),
 ]

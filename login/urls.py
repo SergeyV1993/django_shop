@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.urls import re_path
 from .views import *
-#from django.contrib.auth.views import *
 
 urlpatterns = [
     re_path(r'^login/$', LoginUser.as_view(), name='login'),
-    #re_path(r'^login/$', views.login_view, name='login'), # вариант для функций
-    #re_path(r'^change_password/$', views.change_password, name='change_password'), # использовать только с вьюхой change_password
+    # для варианта с функцией
+    # from django.contrib.auth.views import *
+    # re_path(r'^login/$', views.login_view, name='login'),
+    # re_path(r'^change_password/$', views.change_password, name='change_password'), # использовать только с вьюхой change_password
 ]
