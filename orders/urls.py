@@ -14,10 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import re_path
-from . import views
+from .views import *
 
 urlpatterns = [
-    re_path('^checkout/$', views.checkout, name='checkout'),
-    re_path('^thanks/$', views.make_order, name='thanks'),
-
+    re_path('^checkout/$', CheckoutView.as_view(), name='checkout'),
+    re_path('^thanks/$', CreateOrder.as_view(), name='thanks'),
+    # для функции
+    # from . import views
+    # re_path('^checkout/$', views.checkout, name='checkout'),
+    # re_path('^thanks/$', views.make_order, name='thanks'),
 ]

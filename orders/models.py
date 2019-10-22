@@ -38,7 +38,7 @@ class ProductInOrder(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, db_index=True)
     number_of_product = models.IntegerField(default=1)
     price_one_item = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0) #price * number
+    total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)  # price * number
     is_active = models.BooleanField(default=True)
     create = models.DateTimeField(auto_now_add=True, auto_now=False, db_index=True)
     update = models.DateTimeField(auto_now_add=False, auto_now=True, db_index=True)
