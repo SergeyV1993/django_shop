@@ -1,40 +1,31 @@
 from django.shortcuts import *
 from .forms import UserForm
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import *
 from django.http import *
-from django.views import View
+from django.views.generic import *
 
 
-class RegistrationView(View):
+class RegistrationView(CreateView):
     form_class = UserForm
     template_name = 'registration/registration.html'
+    success_url = 'shop/shop.html'
 
-    def get(self, request, *args, **kwargs):
-        form = self.form_class()
-        context = {
-            'form': form,
-        }
-        return render(request, 'registration/registration.html', context)
+    def form_valid(self, form):
+        new_form = form.save()
 
-    def post(self, request, *args, **kwargs):
-        form = self.form_class(request.POST or None)
-        if form.is_valid():
-            new_form = form.save()
+        username = form.cleaned_data['username']
+        password = form.cleaned_data['password1']
 
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password1']
+        new_form.set_password(password)
+        new_form.save()
+        login_user = authenticate(username=username, password=password)
 
-            new_form.set_password(password)
-            new_form.save()
-            login_user = authenticate(username=username, password=password)
+        if login_user:
+            login(self.request, login_user)
+            return HttpResponseRedirect(reverse('shop'))
+        else:
+            return HttpResponseRedirect(reverse('registration'))
 
-            if login_user:
-                login(request, login_user)
-                return HttpResponseRedirect(reverse('shop'))
-            else:
-                return HttpResponseRedirect(reverse('registration'))
-
-        return HttpResponseRedirect(reverse('registration'))
 
 '''
 def registration(request):
