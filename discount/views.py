@@ -11,7 +11,7 @@ def post_request(cart, code, amount_cart, cookie):
     url = "http://127.0.0.1:8080/api/v1/discount_cart"
     body = {"cart": cart, "code": code, "amount_cart": float(amount_cart)}
     headers = {'Content-Type': 'application/json',
-               #'Authorization': os.environ['TOKEN_AUTH'],
+               # 'Authorization': os.environ['TOKEN_AUTH'],
                'Authorization': 'Token 07237f5ec1bb992f273e8f12db5f9c6924b86476',
                'Connection': 'keep-alive'
                }
@@ -35,17 +35,16 @@ def discount_view(request):
                     cart.cart_total_price = response['amount_cart']
                     cart.save(update_fields=["cart_total_price"])
             elif response['status'] == 'Error':
-                messages.error(request, 'код уже недействителен или использован')
+                messages.error(request, 'Код уже недействителен или использован')
             elif response['status'] == 'Not Valid':
-                messages.error(request, 'промокод не корректен')
+                messages.error(request, 'Промокод не корректен')
             elif response['status'] == 'Code does not exist':
-                messages.error(request, 'такого промокода не существует')
+                messages.error(request, 'Такого промокода не существует')
     else:
         form = DiscountForm()
 
     context = {
         'cart': cart,
-        'messages': messages,
         'form': form,
     }
     return render(request, 'cart/cart.html', context)

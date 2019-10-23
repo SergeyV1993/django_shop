@@ -1,4 +1,4 @@
-from . models import *
+from .models import *
 
 
 def cart(request):
@@ -7,7 +7,7 @@ def cart(request):
         return {'cart': cart,
                 'cart_total': cart.items.count(),
                 'cart_total_sum': cart.cart_total_price
-               }
+                }
     return {'cart': 0,
             'cart_total': 0,
             'cart_total_sum': 0,
