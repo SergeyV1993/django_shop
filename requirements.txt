@@ -22,7 +22,7 @@ Mako==1.0.7
 MarkupSafe==1.0
 oauthlib==2.1.0
 pexpect==4.2.1
-Pillow==5.1.0
+Pillow==6.2.0
 progressbar==2.5
 ptyprocess==0.6.0
 python-debian==0.1.32
