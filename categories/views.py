@@ -8,7 +8,7 @@ class CategoryView(DetailView):
     model = ProductCategory
     template_name = 'categories/categories.html'
     pk_url_kwarg = 'categories_id'
-    paginate_by = 1
+    paginate_by = 25
 
     def get_object(self):
         try:
