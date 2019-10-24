@@ -14,8 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import re_path
-from . import views
+from .views import *
 
 urlpatterns = [
-    re_path(r'^discount/$', views.discount_view, name='discount'),
+    re_path(r'^discount/$', DiscountView.as_view(), name='discount'),
+    # для функции
+    # from . import views
+    # re_path(r'^discount/$', views.discount_view, name='discount'),
 ]

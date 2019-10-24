@@ -57,7 +57,7 @@ class AddToCartView(CreateView):
         })
 
 
-
+'''
 @csrf_exempt
 def cart_view(request):
     if 'cart_id' in request.session:
@@ -67,7 +67,7 @@ def cart_view(request):
         }
         return render(request, 'cart/cart.html', context)
     return render(request, 'cart/cart.html')
-
+'''
 
 @csrf_exempt
 def add_to_cart(request):

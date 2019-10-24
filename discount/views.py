@@ -5,6 +5,7 @@ from django.shortcuts import render
 import requests
 import ast
 import os
+from django.views.generic import *
 
 
 def post_request(cart, code, amount_cart, cookie):
@@ -20,6 +21,35 @@ def post_request(cart, code, amount_cart, cookie):
     return result
 
 
+class DiscountView(FormView):
+    form_class = DiscountForm
+    success_url = 'cart/cart.html'
+
+    def form_valid(self, form):
+        cart = initialize_cart(self.request)
+        code = form.cleaned_data['code']
+        response = post_request(cart.id, code, cart.cart_total_price, self.request.COOKIES)
+
+        if 'status' not in response:
+            if cart.id == response['cart']:
+                cart.cart_total_price = response['amount_cart']
+                cart.save(update_fields=["cart_total_price"])
+        elif response['status'] == 'Error':
+            messages.error(self.request, 'Код уже недействителен или использован')
+        elif response['status'] == 'Not Valid':
+            messages.error(self.request, 'Промокод не корректен')
+        elif response['status'] == 'Code does not exist':
+            messages.error(self.request, 'Такого промокода не существует')
+
+        context = {
+            'cart': cart,
+            'form': form,
+        }
+        return render(self.request, 'cart/cart.html', context)
+
+
+'''
+# реализация с помощью функции
 def discount_view(request):
     cart = initialize_cart(request)
     form = DiscountForm(request.POST or None)
@@ -27,8 +57,7 @@ def discount_view(request):
         if form.is_valid():
 
             code = form.cleaned_data['code']
-            cookies = request.COOKIES
-            response = post_request(cart.id, code, cart.cart_total_price, cookies)
+            response = post_request(cart.id, code, cart.cart_total_price, request.COOKIES)
 
             if 'status' not in response:
                 if cart.id == response['cart']:
@@ -48,3 +77,4 @@ def discount_view(request):
         'form': form,
     }
     return render(request, 'cart/cart.html', context)
+'''
