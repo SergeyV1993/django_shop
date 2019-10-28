@@ -14,14 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import re_path
-from . import views
+from django.views.decorators.csrf import csrf_exempt
 from .views import *
 
 app_name = "cart"
 urlpatterns = [
-    #re_path(r'^cart/$', views.cart_view, name='cart_view'),
-    re_path(r'^cart/$', CartView.as_view(), name='cart_view'),
-    re_path(r'^add_to_cart/$', views.add_to_cart, name='add_to_cart'),
-    #re_path(r'^cart/$', AddToCartView.as_view(), name='add_to_cart'),
-    re_path(r'^remove_from_cart/$', views.remove_from_cart, name='remove_from_cart'),
+    re_path(r'^cart/$', csrf_exempt(CartView.as_view()), name='cart_view'),
+    re_path(r'^add_to_cart/$', csrf_exempt(AddToCartView.as_view()), name='add_to_cart'),
+    re_path(r'^remove_from_cart/$', csrf_exempt(RemoveFromCartView.as_view()), name='remove_from_cart'),
+    # для функции
+    # from . import views
+    # re_path(r'^cart/$', views.cart_view, name='cart_view'),
+    # re_path(r'^add_to_cart/$', views.add_to_cart, name='add_to_cart'),
+    # re_path(r'^remove_from_cart/$', views.remove_from_cart, name='remove_from_cart'),
 ]

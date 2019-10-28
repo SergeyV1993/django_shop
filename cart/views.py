@@ -1,6 +1,4 @@
-from django.shortcuts import render
 from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
 from discount.forms import *
 from . models import *
 from django.views.generic import *
@@ -33,13 +31,12 @@ class CartView(FormView):
         return context
 
 
-class AddToCartView(CreateView):
-    #template_name = 'cart/cart.html'
+class AddToCartView(View):
 
-    def post(self):
-        cart = initialize_cart(self.request)
-        product_id = self.request.POST.get("product_id")
-        qty = int(self.request.POST.get("quantity"))
+    def post(self, request):
+        cart = initialize_cart(request)
+        product_id = request.POST.get("product_id")
+        qty = int(request.POST.get("quantity"))
         product = Product.objects.select_related('type').get(id=product_id)
 
         new_item, _ = CartItem.objects.select_related('product').get_or_create(product=product,
@@ -50,14 +47,38 @@ class AddToCartView(CreateView):
             cart.items.add(new_item)
             cart.cart_total_price += new_item.total_item_price
             cart.save()
+
+        if request.is_ajax():
+            return JsonResponse({
+                'cart_total': cart.items.count(),
+                'cart_total_sum': cart.cart_total_price,
+                'cart_total_summ': cart.cart_total_price
+            })
+
+
+class RemoveFromCartView(View):
+
+    def post(self, request):
+        cart = Cart.objects.prefetch_related('items__product').get(id=request.session['cart_id'])
+        product_id = request.POST.get("product_id")
+        product = Product.objects.select_related('type').get(id=product_id)
+
+        for cart_item in cart.items.all():
+            if cart_item.product == product:
+                cart.items.remove(cart_item)
+                cart.cart_total_price -= cart_item.total_item_price
+                cart.save()
         return JsonResponse({
             'cart_total': cart.items.count(),
             'cart_total_sum': cart.cart_total_price,
+            'cart_sum': cart.cart_total_price,
             'cart_total_summ': cart.cart_total_price
         })
 
-
 '''
+# Реализация через функции
+# from django.shortcuts import render
+# from django.views.decorators.csrf import csrf_exempt
 @csrf_exempt
 def cart_view(request):
     if 'cart_id' in request.session:
@@ -67,7 +88,6 @@ def cart_view(request):
         }
         return render(request, 'cart/cart.html', context)
     return render(request, 'cart/cart.html')
-'''
 
 @csrf_exempt
 def add_to_cart(request):
@@ -89,11 +109,10 @@ def add_to_cart(request):
         'cart_total_summ': cart.cart_total_price
         })
 
-
 @csrf_exempt
 def remove_from_cart(request):
     cart = Cart.objects.prefetch_related('items__product').get(id=request.session['cart_id'])
-    product_id = request.GET.get("product_id")
+    product_id = request.POST.get("product_id")
     product = Product.objects.select_related('type').get(id=product_id)
 
     for cart_item in cart.items.all():
@@ -107,5 +126,5 @@ def remove_from_cart(request):
         'cart_sum': cart.cart_total_price,
         'cart_total_summ': cart.cart_total_price
     })
-
+'''
 

@@ -127,7 +127,7 @@
                     product_id: product_id
                 };
                 $.ajax({
-                    type: 'GET',
+                    type: 'POST',
                     url: {% url "cart:remove_from_cart" %},
                     data: data,
                     success: function(data) {
