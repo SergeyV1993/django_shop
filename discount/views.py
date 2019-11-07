@@ -3,7 +3,6 @@ from django.contrib import messages
 from cart.views import initialize_cart
 from django.shortcuts import render
 import requests
-import ast
 import os
 from django.views.generic import *
 
@@ -17,8 +16,7 @@ def post_request(cart, code, amount_cart, cookie):
                'Connection': 'keep-alive'
                }
     response = requests.post(url, json=body, headers=headers, cookies=cookie)
-    result = ast.literal_eval(response.json())
-    return result
+    return response
 
 
 class DiscountView(FormView):
@@ -29,16 +27,17 @@ class DiscountView(FormView):
         cart = initialize_cart(self.request)
         code = form.cleaned_data['code']
         response = post_request(cart.id, code, cart.cart_total_price, self.request.COOKIES)
+        response_data = response.json()
 
-        if 'status' not in response:
-            if cart.id == response['cart']:
-                cart.cart_total_price = response['amount_cart']
+        if 'message' not in response_data:
+            if cart.id == response_data['cart']:
+                cart.cart_total_price = response_data['amount_cart']
                 cart.save(update_fields=["cart_total_price"])
-        elif response['status'] == 'Error':
+        elif response_data['message'] == 'Expired':
             messages.error(self.request, 'Код уже недействителен или использован')
-        elif response['status'] == 'Not Valid':
+        elif response_data['message'] == 'Not Valid':
             messages.error(self.request, 'Промокод не корректен')
-        elif response['status'] == 'Code does not exist':
+        elif response_data['message'] == 'Code does not exist':
             messages.error(self.request, 'Такого промокода не существует')
 
         context = {
