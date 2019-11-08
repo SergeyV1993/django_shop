@@ -26,19 +26,26 @@ class DiscountView(FormView):
     def form_valid(self, form):
         cart = initialize_cart(self.request)
         code = form.cleaned_data['code']
-        response = post_request(cart.id, code, cart.cart_total_price, self.request.COOKIES)
-        response_data = response.json()
+        try:
+            response = post_request(cart.id, code, cart.cart_total_price, self.request.COOKIES)
+            response_data = response.json()
 
-        if 'message' not in response_data:
-            if cart.id == response_data['cart']:
-                cart.cart_total_price = response_data['amount_cart']
-                cart.save(update_fields=["cart_total_price"])
-        elif response_data['message'] == 'Expired':
-            messages.error(self.request, 'Код уже недействителен или использован')
-        elif response_data['message'] == 'Not Valid':
-            messages.error(self.request, 'Промокод не корректен')
-        elif response_data['message'] == 'Code does not exist':
-            messages.error(self.request, 'Такого промокода не существует')
+            if response.status_code == 200:
+                if cart.id == response_data['cart']:
+                    cart.cart_total_price = response_data['amount_cart']
+                    cart.save(update_fields=["cart_total_price"])
+                else:
+                    messages.error(self.request, 'Ошибка с корзиной')
+            elif response.status_code == 403:
+                messages.error(self.request, 'Код уже недействителен или использован')
+            elif response.status_code == 400:
+                messages.error(self.request, 'Промокод не корректен')
+            elif response.status_code == 404:
+                messages.error(self.request, 'Такого промокода не существует')
+            elif response.status_code == 500:
+                messages.error(self.request, 'Сервис временно недоступен')
+        except:
+            messages.error(self.request, 'Сервис временно недоступен')
 
         context = {
             'cart': cart,
