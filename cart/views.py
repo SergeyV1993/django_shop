@@ -52,7 +52,7 @@ class AddToCartView(View):
             return JsonResponse({
                 'cart_total': cart.items.count(),
                 'cart_total_sum': cart.cart_total_price,
-                'cart_total_summ': cart.cart_total_price
+                'cart_total_summ': cart.cart_total_price,  # для разных id в html, так как нельзя юзать сразу несколько
             })
 
 
