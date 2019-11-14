@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'account',
     'login',
     'discount',
+    'search',
 ]
 
 MIDDLEWARE = [

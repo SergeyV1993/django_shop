@@ -30,6 +30,7 @@ urlpatterns = [
     re_path('', include('account.urls')),
     re_path('', include('login.urls')),
     re_path('', include('discount.urls')),
+    re_path('', include('search.urls')),
 
     re_path(r'^logout/$', LogoutView.as_view(next_page='shop'), name='logout'),
 
