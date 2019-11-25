@@ -81,21 +81,23 @@
       </div>
       <div class="modal-body">
           <h3>Товары</h3>
-          <table class="shop_table">
+          <table class="shop_table" id="cart_items">
              <tbody>
                {% for cart_item in cart.items.all %}
-                   <tr class="cart_item">
+                   <tr>
                        <td class="product-name">
-                           {{ cart_item.product.name }} <strong class="product-quantity">× {{ cart_item.number_of_product }}</strong> </td>
+                           <a>{{ cart_item.product.name }}</a> <strong class="product-quantity">× {{ cart_item.number_of_product }}</strong>
+                       </td>
                        <td class="product-total">
-                           <span class="amount">{{ cart_item.total_item_price }}</span> </td>
+                           <span class="amount">{{ cart_item.total_item_price }}</span>
+                       </td>
                    </tr>
                {% endfor %}
              </tbody>
              <tfoot>
                  <tr class="order-total">
                      <th>Total</th>
-                     <td><strong><span class="amount" >{{ cart.cart_total_price }}</span></strong> </td>
+                     <td><strong><span class="amount" id="cart_total_price">{{ cart.cart_total_price }}</span></strong> </td>
                  </tr>
              </tfoot>
           </table>
@@ -103,9 +105,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
-          {% if cart.items.count > 0 %}
-              <a href='{% url 'cart:cart_view' %}' class="btn btn-default">Корзина</a>
-          {% endif %}
+            <a href='{% url 'cart:cart_view' %}' class="btn btn-default">Корзина</a>
       </div>
     </div>
   </div>

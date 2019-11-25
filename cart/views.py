@@ -2,6 +2,7 @@ from django.http import JsonResponse
 from discount.forms import *
 from . models import *
 from django.views.generic import *
+from rest_framework import serializers
 
 
 def initialize_cart(request):
@@ -53,6 +54,12 @@ class AddToCartView(View):
                 'cart_total': cart.items.count(),
                 'cart_total_sum': cart.cart_total_price,
                 'cart_total_summ': cart.cart_total_price,  # для разных id в html, так как нельзя юзать сразу несколько
+
+                # инфа для шапки
+                'adding_cart_item': product.name,
+                'quantity': qty,
+                'price_items': product.price * qty,
+                'cart_total_price': cart.cart_total_price
             })
 
 
