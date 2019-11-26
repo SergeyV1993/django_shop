@@ -10,10 +10,10 @@ class CategoryView(DetailView):
     pk_url_kwarg = 'categories_id'
     paginate_by = 25
 
-    def get_object(self):
+    def get_object(self, **kwargs):
         try:
-            catagory_id = self.kwargs.get('categories_id')
-            return ProductCategory.objects.get(id=catagory_id)
+            category_id = self.kwargs.get('categories_id')
+            return ProductCategory.objects.get(id=category_id)
         except ProductCategory.DoesNotExist:
             raise Http404("Category does not exist")
 

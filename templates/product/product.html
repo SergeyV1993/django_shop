@@ -94,6 +94,18 @@
                     success: function(data) {
                         $("#cart_count").html(data.cart_total);
                         $("#cart_total_sum").html(data.cart_total_sum);
+                        $("#cart_items").append(
+                        '<tbody>'+
+                            '<tr>'+
+                                '<td class="product-name">'+
+                                    '<a>'+data.adding_cart_item+'</a> <strong class="product-quantity">×'+data.quantity+'</strong>'+
+                                '</td>'+
+                                '<td class="product-total">'+
+                                    '<span class="amount">'+data.price_items+'</span>'+
+                                '</td>'+
+                            '</tr>'+
+                        '<tbody>');
+                        $("#cart_total_price").html(data.cart_total_price);
                     }
                 });
              });

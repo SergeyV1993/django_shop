@@ -27,7 +27,7 @@
                          </div>
 
                          <h2>
-                             <a href="{% url 'product' product.id %}">
+                             <a href="{% url 'product' product.product.id %}">
                                  {{ product.product.name }}
                              </a>
                          </h2>
@@ -42,7 +42,7 @@
                              <form action="#" method="POST">
                                  {% csrf_token %}
                                  {% if request.user.is_authenticated %}
-                                     <input type="submit" class="cart" data-id="{{ product.id }}" name="quantity" value="Add to cart">
+                                     <input type="submit" class="cart" data-id="{{ product.product.id }}" name="quantity" value="Add to cart">
                                      <input type="hidden" value="1" name="quantity">
                                  {% else %}
                                      <small class="text-center"><a href="{% url 'login' %}">Войдите</a> или <a href="{% url 'registration' %}">Зарегистрируйтесь</a></small>
@@ -108,6 +108,18 @@
                         $("#cart_count").html(data.cart_total);
                         $("#cart_total_sum").html(data.cart_total_sum);
                         $("#cart_total_summ").html(data.cart_total_summ);
+                        $("#cart_items").append(
+                        '<tbody>'+
+                            '<tr>'+
+                                '<td class="product-name">'+
+                                    '<a>'+data.adding_cart_item+'</a> <strong class="product-quantity">×'+data.quantity+'</strong>'+
+                                '</td>'+
+                                '<td class="product-total">'+
+                                    '<span class="amount">'+data.price_items+'</span>'+
+                                '</td>'+
+                            '</tr>'+
+                        '<tbody>');
+                        $("#cart_total_price").html(data.cart_total_price);
                     }
                 });
              });
