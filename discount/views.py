@@ -7,27 +7,26 @@ import os
 from django.views.generic import *
 
 
-def post_request(cart, code, amount_cart, cookie):
-    url = "http://127.0.0.1:8080/api/v1/discount_cart"
-    body = {"cart": cart, "code": code, "amount_cart": float(amount_cart)}
-    headers = {'Content-Type': 'application/json',
-               # 'Authorization': os.environ['TOKEN_AUTH'],
-               'Authorization': 'Token 07237f5ec1bb992f273e8f12db5f9c6924b86476',
-               'Connection': 'keep-alive'
-               }
-    response = requests.post(url, json=body, headers=headers, cookies=cookie)
-    return response
-
-
 class DiscountView(FormView):
     form_class = DiscountForm
     success_url = 'cart/cart.html'
+
+    def post_request(self, cart, code, amount_cart, cookie):
+        url = "http://127.0.0.1:8080/api/v1/discount_cart"
+        body = {"cart": cart, "code": code, "amount_cart": float(amount_cart)}
+        headers = {'Content-Type': 'application/json',
+                   # 'Authorization': os.environ['TOKEN_AUTH'],
+                   'Authorization': 'Token 07237f5ec1bb992f273e8f12db5f9c6924b86476',
+                   'Connection': 'keep-alive'
+                   }
+        response = requests.post(url, json=body, headers=headers, cookies=cookie)
+        return response
 
     def form_valid(self, form):
         cart = initialize_cart(self.request)
         code = form.cleaned_data['code']
         try:
-            response = post_request(cart.id, code, cart.cart_total_price, self.request.COOKIES)
+            response = self.post_request(cart.id, code, cart.cart_total_price, self.request.COOKIES)
             response_data = response.json()
 
             if response.status_code == 200:
