@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.urls import re_path
 from .views import *
+from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
-    re_path(r'^discount/$', DiscountView.as_view(), name='discount'),
+    re_path(r'^discount/$', csrf_exempt(DiscountView.as_view()), name='discount'),
     # для функции
     # from . import views
     # re_path(r'^discount/$', views.discount_view, name='discount'),

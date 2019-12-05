@@ -68,18 +68,20 @@
                                             </td>
                                         </tr>
                             </form>
+                            <div id="messages">
+                                {% for message in messages %}
+                                <div class="message {{ message.tags }}">
+                                    {{ message }}
+                                </div>
+                                {% endfor %}
+                            </div>
 
-                                        {% for message in messages %}
-                                        <div class="message {{ message.tags }}">
-                                            {{ message }}
-                                        </div>
-                                        {% endfor %}
-                            <form method="post" action="{% url 'discount' %}">{% csrf_token %}
+                            <form method="post" action="#" id="code">{% csrf_token %}
                                         <tr>
                                             <td class="actions" colspan="6">
                                                 <div class="coupon">
                                                     {{ form.as_p }}
-                                                    <input type="submit" value="Apply Coupon" name="apply_coupon" class="button">
+                                                    <input type="submit" value="Apply Coupon" name="apply_coupon" id="discount">
                                                 </div>
                                             </td>
                                         </tr>
@@ -136,6 +138,23 @@
                         $('.cart_item-'+product_id).css('display', 'none');
                         $("#cart_sum").html(data.cart_sum);
                         $("#cart_total_summ").html(data.cart_total_summ);
+                    }
+                });
+             });
+          });
+        </script>
+
+        <script>
+          $(document).ready(function(){
+            $("#discount").on('click', function(e) {
+                e.preventDefault();
+                $.ajax({
+                    type: 'POST',
+                    url: {% url "discount" %},
+                    data: $("#code").serialize(),
+                    success: function(data) {
+                        $("#cart_sum").html(data.cart_sum);
+                        $("#messages").html(data.messages);
                     }
                 });
              });
