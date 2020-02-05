@@ -29,7 +29,7 @@ python-debian==0.1.32
 python-gnupg==0.4.1
 python3-openid==3.1.0
 pytz==2019.1
-pyxdg==0.25
+pyxdg==0.26
 PyYAML==5.1
 redis==3.2.1
 reportlab==3.4.0
