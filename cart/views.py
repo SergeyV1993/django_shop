@@ -55,7 +55,8 @@ class AddToCartView(View):
                 'cart_total_sum': cart.cart_total_price,
                 'cart_total_summ': cart.cart_total_price,  # для разных id в html, так как нельзя юзать сразу несколько
 
-                # инфа для шапки
+                """инфа для шапки на странице""" 
+                
                 'adding_cart_item': product.name,
                 'quantity': qty,
                 'price_items': product.price * qty,
@@ -75,6 +76,7 @@ class RemoveFromCartView(View):
                 cart.items.remove(cart_item)
                 cart.cart_total_price -= cart_item.total_item_price
                 cart.save()
+
         return JsonResponse({
             'cart_total': cart.items.count(),
             'cart_total_sum': cart.cart_total_price,
