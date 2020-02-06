@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 from discount.forms import *
-from . models import *
+from .models import *
 from django.views.generic import *
 from rest_framework import serializers
 
@@ -55,8 +55,8 @@ class AddToCartView(View):
                 'cart_total_sum': cart.cart_total_price,
                 'cart_total_summ': cart.cart_total_price,  # для разных id в html, так как нельзя юзать сразу несколько
 
-                """инфа для шапки на странице""" 
-                
+                # """инфа для шапки на странице"""
+
                 'adding_cart_item': product.name,
                 'quantity': qty,
                 'price_items': product.price * qty,
@@ -83,6 +83,7 @@ class RemoveFromCartView(View):
             'cart_sum': cart.cart_total_price,
             'cart_total_summ': cart.cart_total_price
         })
+
 
 '''
 # Реализация через функции
@@ -136,4 +137,3 @@ def remove_from_cart(request):
         'cart_total_summ': cart.cart_total_price
     })
 '''
-
