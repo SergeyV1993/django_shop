@@ -36,8 +36,10 @@ class AccountDeleteView(DeleteView):
         user.delete()
         return HttpResponseRedirect('/')
 
+
 '''
 #Реализация через функции
+
 def account_view(request):
     if request.user.is_authenticated:
         order = Order.objects.select_related('status').filter(user=request.user).order_by('-id').prefetch_related('productinorder_set__product')
