@@ -1,4 +1,3 @@
-from django.shortcuts import *
 from .forms import UserForm
 from django.contrib.auth import *
 from django.http import *

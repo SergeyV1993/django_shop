@@ -1,7 +1,6 @@
 from .forms import *
 from cart.views import initialize_cart
 import requests
-import os
 from django.views.generic import *
 from django.http import JsonResponse
 

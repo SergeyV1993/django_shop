@@ -11,8 +11,11 @@ class SearchView(ListView):
     def post(self, request, *args, **kwargs):
         question = self.request.POST.get('search')
 
-        search = self.model.objects.select_related('product').only('product__name', 'product__price',
-                                                                   'image').filter(product__name__icontains=question)
+        search = self.model.objects.select_related('product').only(
+            'product__name',
+            'product__price',
+            'image'
+        ).filter(product__name__icontains=question)
         if search:
             context = {
                 'products_image': search

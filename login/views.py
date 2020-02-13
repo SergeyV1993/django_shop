@@ -16,6 +16,7 @@ class LoginUser(LoginView):
         login_user = authenticate(username=username, password=password)
         if login_user:
             login(self.request, login_user)
+
             # вызывать аккуратно, только после того как запустил redis-server, иначе зависание
             # from .task import send_mail_login
             # send_mail_login.delay(username)

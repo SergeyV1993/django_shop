@@ -126,10 +126,10 @@ LOGGING = {
             'formatter': 'simple',
             'filename': os.path.join(BASE_DIR, 'test.log'),
         },
-        'console': {
-            'class': 'logging.StreamHandler',
-            'formatter': 'simple',
-        },
+        #'console': { //пока убрал
+        #    'class': 'logging.StreamHandler',
+        #    'formatter': 'simple',
+        #},
         'file_sql': {
             'class': 'logging.FileHandler',
             'formatter': 'simple',

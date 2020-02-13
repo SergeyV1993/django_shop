@@ -2,7 +2,6 @@ from django.http import JsonResponse
 from discount.forms import *
 from .models import *
 from django.views.generic import *
-from rest_framework import serializers
 
 
 def initialize_cart(request):
