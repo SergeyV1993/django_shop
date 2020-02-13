@@ -8,6 +8,7 @@ class ProductView(DetailView):
     template_name = 'product/product.html'
     pk_url_kwarg = 'product_id'
 
+'''
     def get_object(self):
         try:
             product_id = self.kwargs.get('product_id')
@@ -19,7 +20,7 @@ class ProductView(DetailView):
         context = super(ProductView, self).get_context_data(**kwargs)
         context['product'] = self.get_object()
         return context
-
+'''
 
 '''
 # реализация с помощью функции

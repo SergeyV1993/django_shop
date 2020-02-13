@@ -3,6 +3,7 @@ from .forms import UserForm
 from django.contrib.auth import *
 from django.http import *
 from django.views.generic import *
+from django.urls import reverse
 
 
 class RegistrationView(CreateView):

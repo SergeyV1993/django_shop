@@ -1,22 +1,36 @@
 import datetime
 from django.test import TestCase
-from django.shortcuts import *
 from django.contrib.auth.models import User
 from orders.models import *
+from django.urls import reverse
 
 
 class AccountListViewTest(TestCase):
 
     def setUp(self):
-        # Создание тестового пользователя
+        """Создание тестового пользователя"""
         test_user1 = User.objects.create_user(username='testuser', password='12345')
         test_user1.save()
 
+        """Создание тестового статуса для заказа"""
+        Status.objects.create(
+            name='New',
+            create=datetime.datetime.now(),
+            update=datetime.datetime.now()
+        )
+
+        """Создание 10 заказов"""
         number_of_orders_copies = 10
         for order in range(number_of_orders_copies):
-            Order.objects.create(user=test_user1, customer_email='test@test.qw', customer_name='test',
-                                 customer_phone='1234567', total_price='1000', create=datetime.datetime.now(),
-                                 update=datetime.datetime.now())
+            Order.objects.create(
+                user=test_user1,
+                customer_email='test@test.qw',
+                customer_name='test',
+                customer_phone='1234567',
+                total_price='1000',
+                create=datetime.datetime.now(),
+                update=datetime.datetime.now()
+            )
 
     def test_logged_user(self):
         self.client.login(username='testuser', password='12345')

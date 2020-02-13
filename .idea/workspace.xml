@@ -1,9 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3568c18f-9e3d-4a06-9601-d89514b9c41b" name="Default Changelist" comment="">
+    <list default="true" id="3568c18f-9e3d-4a06-9601-d89514b9c41b" name="Default Changelist" comment="Merge branch 'master' of https://github.com/SergeyV1993/django_shop&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/migrations/0002_remove_cartitem_image.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/migrations/0003_auto_20180924_1918.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/migrations/0004_auto_20180924_1929.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/migrations/0005_auto_20181029_2036.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/migrations/0006_auto_20181114_1941.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/migrations/0007_auto_20181128_1947.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/migrations/0008_auto_20190403_1911.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/migrations/0009_auto_20190403_1917.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/migrations/0010_auto_20190626_1926.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/login/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/migrations/0002_auto_20180702_1935.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/migrations/0003_auto_20180702_2014.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/migrations/0004_auto_20180703_1941.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/migrations/0005_auto_20180911_1930.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/migrations/0006_auto_20180911_2014.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/migrations/0007_order_user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/migrations/0008_auto_20181008_1949.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/migrations/0009_remove_order_user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/migrations/0010_auto_20181024_1952.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/migrations/0011_auto_20181029_2033.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/migrations/0012_auto_20181029_2036.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/migrations/0013_order_user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/migrations/0014_auto_20181101_2004.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/migrations/0015_auto_20181129_1849.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/migrations/0016_auto_20190828_1940.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/migrations/0017_auto_20190828_2009.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/migrations/0018_auto_20190828_2023.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/0002_product_price.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/0003_auto_20180903_1950.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/0004_auto_20180904_1921.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/0005_auto_20180904_1924.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/0006_remove_product_discount.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/0007_product_discount.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/0008_auto_20180904_1936.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/0009_auto_20180904_1950.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/0010_auto_20180904_2002.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/0011_auto_20180904_2008.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/0012_auto_20180904_2012.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/0013_auto_20180911_1930.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/0014_auto_20181112_1941.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/0015_auto_20181112_1942.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/0016_auto_20181113_1903.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/0017_auto_20181113_1908.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/0018_auto_20181129_1918.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/0019_auto_20181205_1906.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration/migrations/0002_delete_user.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/registration/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +81,7 @@
   </component>
   <component name="ProjectId" id="1SL55cgcAoTNXSyO5ieWz3hwDcE" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/shop" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -50,6 +108,42 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager" selected="Python tests.Unittests for account.tests.AccountListViewTest.test_count_orders_for_user">
+    <configuration name="Unittests for account.tests.AccountListViewTest.test_count_orders_for_user" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="django_shop" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/account" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;account.tests.AccountListViewTest.test_count_orders_for_user&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for account.tests.AccountListViewTest.test_logged_user" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="django_shop" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/account" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;account.tests.AccountListViewTest.test_logged_user&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Unittests for account.tests.AccountListViewTest.test_count_orders_for_user" />
+        <item itemvalue="Python tests.Unittests for account.tests.AccountListViewTest.test_logged_user" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
