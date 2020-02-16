@@ -16,6 +16,7 @@ class SearchView(ListView):
             'product__price',
             'image'
         ).filter(product__name__icontains=question)
+
         if search:
             context = {
                 'products_image': search
