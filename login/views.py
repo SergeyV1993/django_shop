@@ -2,6 +2,7 @@ from .forms import LoginForm
 from django.contrib.auth import *
 from django.contrib.auth.views import *
 from django.urls import reverse
+from .task import send_mail_login
 
 
 class LoginUser(LoginView):
@@ -17,9 +18,8 @@ class LoginUser(LoginView):
         if login_user:
             login(self.request, login_user)
 
-            # вызывать аккуратно, только после того как запустил redis-server, иначе зависание
-            # from .task import send_mail_login
-            # send_mail_login.delay(username)
+            # вызывать аккуратно, только после того как запустил redis-server или докер  docker run -d -p 6379:6379 redis, иначе получим зависание
+            #send_mail_login.delay(username)
 
             return HttpResponseRedirect(reverse('shop'))
 
