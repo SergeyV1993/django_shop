@@ -25,7 +25,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="db9489e8-0020-4359-869f-7cceeea4323e">
-        <schema name="main" object-types="table, view" />
+        <schema name="main" object-types="table, dataset trigger, constraint, index, view" />
       </connection>
     </loaded-nodes>
   </component>
@@ -41,6 +41,7 @@
     <connection id="db9489e8-0020-4359-869f-7cceeea4323e" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="db9489e8-0020-4359-869f-7cceeea4323e" dataset="main.products_product" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="db9489e8-0020-4359-869f-7cceeea4323e" dataset="main.django_migrations" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="db9489e8-0020-4359-869f-7cceeea4323e" dataset="main.orders_order" active-filter-id="EMPTY_FILTER">
       <filter id="4a49851f-74e3-4d8f-bbec-e64bb0ee336b" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
@@ -53,7 +54,7 @@
       </filter>
     </filter-actions>
     <filter-actions connection-id="db9489e8-0020-4359-869f-7cceeea4323e" dataset="main.products_productimage" active-filter-id="EMPTY_FILTER" />
-    <filter-actions connection-id="db9489e8-0020-4359-869f-7cceeea4323e" dataset="main.cart_cart" active-filter-id="" />
+    <filter-actions connection-id="db9489e8-0020-4359-869f-7cceeea4323e" dataset="main.cart_cart" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="db9489e8-0020-4359-869f-7cceeea4323e" dataset="main.django_content_type" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="db9489e8-0020-4359-869f-7cceeea4323e" dataset="main.orders_status" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="db9489e8-0020-4359-869f-7cceeea4323e" dataset="main.django_session" active-filter-id="EMPTY_FILTER">

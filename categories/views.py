@@ -1,11 +1,12 @@
-from products.models import *
+from .models import *
+from products.models import ProductImage
 from django.core.paginator import *
 from django.http import Http404
 from django.views.generic import *
 
 
 class CategoryView(DetailView):
-    model = ProductCategory
+    model = Category
     template_name = 'categories/categories.html'
     pk_url_kwarg = 'categories_id'
     paginate_by = 25
@@ -13,8 +14,8 @@ class CategoryView(DetailView):
     def get_object(self, **kwargs):
         try:
             category_id = self.kwargs.get('categories_id')
-            return ProductCategory.objects.get(id=category_id)
-        except ProductCategory.DoesNotExist:
+            return Category.objects.get(id=category_id)
+        except Category.DoesNotExist:
             raise Http404("Category does not exist")
 
     def get_context_data(self, **kwargs):
@@ -41,8 +42,8 @@ from django.shortcuts import render
 
 def categories(request, categories_id):
     try:
-        categories = ProductCategory.objects.get(id=categories_id)
-    except ProductCategory.DoesNotExist:
+        categories = Category.objects.get(id=categories_id)
+    except Category.DoesNotExist:
         raise Http404("Category does not exist")
 
     product = ProductImage.objects.select_related('product').only('product__name', 'product__price', 'image').filter(product__type=categories)
