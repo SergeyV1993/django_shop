@@ -126,10 +126,11 @@ LOGGING = {
             'formatter': 'simple',
             'filename': os.path.join(BASE_DIR, 'test.log'),
         },
-        'console': {
-            'class': 'logging.StreamHandler',
-            'formatter': 'simple',
-        },
+        # для вывода логов в консоль
+        #'console': {
+        #    'class': 'logging.StreamHandler',
+        #    'formatter': 'simple',
+        #},
         'file_sql': {
             'class': 'logging.FileHandler',
             'formatter': 'simple',
@@ -140,7 +141,7 @@ LOGGING = {
     'loggers': {
         'django': {
             'level': 'CRITICAL',
-            'handlers': ['console'],
+            'handlers': ['file'],
         },
         'django.db.backends': {
             'level': 'DEBUG',
