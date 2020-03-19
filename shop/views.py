@@ -5,11 +5,11 @@ from shop.serializers import ShopViewSerializer
 
 
 class ShopView(ListView):
-    model = ProductImage
+    model = Product
     template_name = 'shop/shop.html'
-    queryset = model.objects.select_related('product').only('product__name', 'product__price', 'image').filter(is_active=True)
+    queryset = model.objects.only('name', 'price', 'image').filter(is_active=True)
     paginate_by = 25
-    context_object_name = 'products_image'
+    context_object_name = 'products'
 
 
 class ShopViewSet(ModelViewSet):

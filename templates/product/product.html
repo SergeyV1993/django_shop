@@ -27,9 +27,7 @@
                             <div class="col-sm-6">
                                 <div class="product-images">
                                     <div class="product-main-img">
-                                        {% for image_item in product.productimage_set.all %}
-                                             <img src="{{ image_item.image.url }}" style="width:450px; height: 450px">
-                                        {% endfor %}
+                                        <img src="{{ product.image.url }}" style="width:450px; height: 450px">
                                     </div>
                                 </div>
                             </div>

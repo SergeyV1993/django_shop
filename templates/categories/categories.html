@@ -27,7 +27,7 @@
                          </div>
 
                          <h2>
-                             <a href="{% url 'product' product.product.id %}">
+                             <a href="{% url 'product' product.id %}">
                                  {{ product.product.name }}
                              </a>
                          </h2>
@@ -42,7 +42,7 @@
                              <form action="#" method="POST">
                                  {% csrf_token %}
                                  {% if request.user.is_authenticated %}
-                                     <input type="submit" class="cart" data-id="{{ product.product.id }}" name="quantity" value="Add to cart">
+                                     <input type="submit" class="cart" data-id="{{ product.id }}" name="quantity" value="Add to cart">
                                      <input type="hidden" value="1" name="quantity">
                                  {% else %}
                                      <small class="text-center"><a href="{% url 'login' %}">Войдите</a> или <a href="{% url 'registration' %}">Зарегистрируйтесь</a></small>
