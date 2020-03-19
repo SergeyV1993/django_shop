@@ -13,12 +13,18 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import re_path
+from django.urls import path
+from rest_framework.routers import DefaultRouter
 from shop.views import *
 
+router = DefaultRouter()
+router.register('api/shop_view', ShopViewSet)
 
 urlpatterns = [
-    re_path(r'^shop/$', ShopView.as_view(), name='shop'),
+    path('shop/', ShopView.as_view(), name='shop'),
+    path('shop_vue/', TemplateView.as_view(template_name='shop/shop_vue.html')),
     # для функции
     # re_path(r'^shop/$', views.shop, name='shop'),
 ]
+
+urlpatterns += router.urls

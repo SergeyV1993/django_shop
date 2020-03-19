@@ -1,5 +1,7 @@
+from rest_framework.viewsets import ModelViewSet
 from products.models import *
 from django.views.generic import *
+from shop.serializers import ShopViewSerializer
 
 
 class ShopView(ListView):
@@ -8,6 +10,11 @@ class ShopView(ListView):
     queryset = model.objects.select_related('product').only('product__name', 'product__price', 'image').filter(is_active=True)
     paginate_by = 25
     context_object_name = 'products_image'
+
+
+class ShopViewSet(ModelViewSet):
+    queryset = Product.objects.only('id', 'name', 'price').filter(is_active=True)
+    serializer_class = ShopViewSerializer
 
 
 '''

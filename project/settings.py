@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'login',
     'discount',
     'search',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

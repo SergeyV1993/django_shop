@@ -1,17 +1,6 @@
 from django.db import models
 from categories.models import Category
 
-'''
-class ProductCategory(models.Model):
-    name = models.CharField(max_length=128, blank=True, null=True, default=None, db_index=True)
-    is_active = models.BooleanField(default=True)
-
-    def __str__(self):
-        try:
-            return self.name
-        except Exception as error:
-            print(error)
-'''
 
 class Product(models.Model):
     name = models.CharField(max_length=128, blank=True, null=True, default=None, db_index=True)

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block content %}
+    <div class="product-big-title-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-bit-title text-center">
+                        <h2>Shop</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="single-product-area">
+        <div class="zigzag-bottom"></div>
+        {% verbatim %}
+        <div class="container" id="shop_vue">
+            <div class="row" v-for="product in products">
+
+                <div class="col-md-3 col-sm-6">
+                     <div class="single-shop-product">
+
+                         <h2>
+                             <a href="{% url 'product' product.id %}">
+                                 {{ product.name }}
+                             </a>
+                         </h2>
+
+                         <div class="product-carousel-price">
+                             <p>
+                                 {{ product.price }} RUB
+                             </p>
+                         </div>
+
+                     </div>
+                 </div>
+
+            </div>
+         </div>
+        {% endverbatim %}
+    </div>
+        <script src="{% static 'shop_vue.js' %}"></script>
+
+    {% endblock %}
