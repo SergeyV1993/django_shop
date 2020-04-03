@@ -24,7 +24,7 @@
                      <div class="single-shop-product">
 
                          <h2>
-                             <a href="{% url 'product' product.id %}">
+                             <a v-bind:href="product.id">
                                  {{ product.name }}
                              </a>
                          </h2>
