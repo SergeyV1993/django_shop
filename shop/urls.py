@@ -24,7 +24,7 @@ urlpatterns = [
     path('shop/', ShopView.as_view(), name='shop'),
     path('shop_vue/', TemplateView.as_view(template_name='shop/shop_vue.html')),
     # для функции
-    # re_path(r'^shop/$', views.shop, name='shop'),
+    # path('shop/', views.shop, name='shop'),
 ]
 
 urlpatterns += router.urls

@@ -20,5 +20,5 @@ urlpatterns = [
    path('product/<int:product_id>/', ProductView.as_view(), name='product'),
    # для функции
    # from . import views
-   # re_path(r'product/(?P<product_id>\w+)/$', views.product, name='product'),
+   # path('product/<int:product_id>/', views.product, name='product'),
 ]

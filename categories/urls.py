@@ -20,6 +20,6 @@ urlpatterns = [
     path('categories/<int:categories_id>/', CategoryView.as_view(), name='categories'),
     # для функции
     # from . import views
-    # re_path(r'^categories/(?P<categories_id>\w+)/$', views.categories, name='categories'),
+    # path('categories/<int:categories_id>/', views.categories, name='categories'),
 
 ]
