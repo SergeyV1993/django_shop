@@ -19,7 +19,7 @@ class CategoryView(DetailView):
             raise Http404("Category does not exist")
 
     def get_context_data(self, **kwargs):
-        product = Product.objects.only('name', 'price', 'image').filter(type=self.get_object())
+        product = Product.objects.only('name', 'price', 'image').filter(type=self.get_object()).order_by('name')
         paginator = Paginator(product, self.paginate_by)
         page = self.request.GET.get('page')
         try:
