@@ -24,7 +24,7 @@
                      <div class="single-shop-product">
 
                          <h2>
-                             <a v-bind:href="product.id">
+                             <a v-bind:href="page_url">
                                  {{ product.name }}
                              </a>
                          </h2>
@@ -43,5 +43,4 @@
         {% endverbatim %}
     </div>
         <script src="{% static 'shop_vue.js' %}"></script>
-
     {% endblock %}

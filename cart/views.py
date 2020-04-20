@@ -1,22 +1,8 @@
 from django.http import JsonResponse
+from .service import initialize_cart
 from discount.forms import *
 from .models import *
 from django.views.generic import *
-
-
-def initialize_cart(request):
-    if 'cart_id' in request.session:
-        cart_id = request.session['cart_id']
-        cart = Cart.objects.prefetch_related('items').get(id=cart_id)
-        cart.save()
-        request.session['total'] = cart.items.count()
-    else:
-        cart = Cart()
-        cart.save()
-        cart_id = cart.id
-        request.session['cart_id'] = cart_id
-        cart = Cart.objects.prefetch_related('items').get(id=cart_id)
-    return cart
 
 
 class CartView(FormView):

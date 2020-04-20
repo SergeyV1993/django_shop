@@ -1,5 +1,5 @@
 from .forms import *
-from cart.views import initialize_cart
+from cart.service import initialize_cart
 import requests
 from django.views.generic import *
 from django.http import JsonResponse
