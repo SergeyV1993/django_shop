@@ -10,7 +10,8 @@ class DiscountView(FormView):
     template_name = 'cart/cart.html'
     success_url = 'cart/cart.html'
 
-    def post_request(self, cart, code, amount_cart, cookie):
+    @staticmethod
+    def post_request(cart, code, amount_cart, cookie):
         url = "http://127.0.0.1:8080/api/v1/discount_cart"
         body = {"cart": cart, "code": code, "amount_cart": float(amount_cart)}
         headers = {'Content-Type': 'application/json',
@@ -27,7 +28,7 @@ class DiscountView(FormView):
         msg = ''
 
         try:
-            response = self.post_request(cart.id, code, cart.cart_total_price, self.request.COOKIES)
+            response = DiscountView.post_request(cart.id, code, cart.cart_total_price, self.request.COOKIES)
             response_data = response.json()
 
             if response.status_code == 200:
