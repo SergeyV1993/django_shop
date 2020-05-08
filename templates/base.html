@@ -143,7 +143,7 @@
                                      <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
-                                     {% for category in cat %}
+                                     {% for category in request.category_list %}
                                           <li><a href="{% url 'categories' categories_id=category.id %}">{{ category.name }}</a></li>
                                      {% endfor %}
                                 </ul>
@@ -191,7 +191,7 @@
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">Categories</h2>
                         <ul>
-                            {% for category in cat %}
+                            {% for category in request.category_list %}
                                 <li><a href="{% url 'categories' categories_id=category.id %}">{{ category.name }}</a></li>
                             {% endfor %}
                         </ul>
