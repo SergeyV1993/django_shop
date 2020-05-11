@@ -130,7 +130,7 @@
                 };
                 $.ajax({
                     type: 'POST',
-                    url: {% url "cart:remove_from_cart" %},
+                    url: {% url "remove_from_cart" %},
                     data: data,
                     success: function(data) {
                         $("#cart_count").html(data.cart_total);

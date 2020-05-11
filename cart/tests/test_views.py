@@ -48,19 +48,19 @@ class CartViewTest(TestCase):
 
     """Отображение урла по имени"""
     def test_view_url_accessible_by_name(self):
-        response = self.client.get(reverse('cart:cart_view'))
+        response = self.client.get(reverse('cart_view'))
 
         self.assertEqual(response.status_code, 200)
 
     """Корректное отображение темплэйта"""
     def test_view_uses_correct_template(self):
-        response = self.client.get(reverse('cart:cart_view'))
+        response = self.client.get(reverse('cart_view'))
 
         self.assertTemplateUsed(response, 'cart/cart.html')
 
     def test_count_items_in_cart(self):
         self.client.login(username='testuser', password='12345')
-        response = self.client.get(reverse('cart:cart_view'))
+        response = self.client.get(reverse('cart_view'))
         print(response.context)
 
 

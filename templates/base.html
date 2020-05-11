@@ -107,7 +107,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
-            <a href='{% url 'cart:cart_view' %}' class="btn btn-default">Корзина</a>
+            <a href="{% url 'cart_view' %}" class="btn btn-default">Корзина</a>
       </div>
     </div>
   </div>
@@ -133,7 +133,7 @@
                         <li><a href="{% url 'home' %}">Home</a></li>
                         <li><a href="{% url 'shop' %}">Shop page</a></li>
                         {% if request.user.is_authenticated %}
-                            <li><a href="{% url 'cart:cart_view' %}">Cart</a></li>
+                            <li><a href="{% url 'cart_view' %}">Cart</a></li>
                         {% endif %}
                         <li class="select2-dropdown">
                             <div class="btn-group">
