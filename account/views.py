@@ -1,3 +1,4 @@
+from django.core.cache import cache
 from django.shortcuts import render
 from orders.models import *
 from django.http import *
@@ -5,6 +6,7 @@ from django.views.generic import *
 
 
 class AccountView(ListView):
+    """Реализация отображения личного кабинета БЕЗ ИСПОЛЬЗОВАНИЯ кэша"""
     model = Order
     template_name = 'account/account.html'
 
@@ -20,7 +22,30 @@ class AccountView(ListView):
         return render(request, self.template_name, context)
 
 
+class AccountWithCacheView(ListView):
+    """Реализация отображения личного кабинета С ИСПОЛЬЗОВАНИЕМ кэша"""
+    model = Order
+    template_name = 'account/account.html'
+
+    def get(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return render(request, self.template_name)
+
+        if 'order' in cache:
+            order = cache.get('order')
+        else:
+            order = self.model.objects.select_related('status').filter(user=request.user).order_by(
+                '-id').prefetch_related('productinorder_set__product')
+            cache.set('order', order)
+
+        context = {
+            'order': order,
+        }
+        return render(request, self.template_name, context)
+
+
 class AccountDeleteView(DeleteView):
+    """Удаление личного кабинета"""
     model = Order
     template_name = 'account/account.html'
     success_url = '/'

@@ -1,6 +1,5 @@
 import os
 
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 #SECRET_KEY = os.environ['SECRET_KEY_SHOP']
@@ -170,9 +169,8 @@ STATICFILES_DIRS = (
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = '/media/'
-
 '''
-# запускать аккуратно, только после запуска redis-server, иначе авторизации зависнут
+# запускать аккуратно, только после запуска redis-server или докера, иначе будет ошибка
 REDIS_HOST = '0.0.0.0'
 REDIS_PORT = '6379'
 CELERY_BROKER_URL = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
@@ -188,13 +186,14 @@ CACHES = {
         
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/1',
+        "TIMEOUT": 60 * 60, # живучесть кэша
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            "MAX_ENTRIES": 400, # количество обращений к кэшу, пока он не обновится
         }
     }
 }
 '''
-
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "default"
 
