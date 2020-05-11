@@ -98,7 +98,7 @@ LOGGING = {
         'file': {
             'class': 'logging.FileHandler',
             'formatter': 'simple',
-            'filename': os.path.join(BASE_DIR, 'test.log'),
+            'filename': os.path.join(BASE_DIR + '/logs', 'test.log'),
         },
         # для вывода логов в консоль
         #'console': {
@@ -108,7 +108,7 @@ LOGGING = {
         'file_sql': {
             'class': 'logging.FileHandler',
             'formatter': 'simple',
-            'filename': os.path.join(BASE_DIR, 'file_sql.log'),
+            'filename': os.path.join(BASE_DIR + '/logs', 'file_sql.log'),
         },
 
     },
