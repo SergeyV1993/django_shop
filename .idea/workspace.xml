@@ -2,7 +2,87 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3568c18f-9e3d-4a06-9601-d89514b9c41b" name="Default Changelist" comment="Merge branch 'master' of https://github.com/SergeyV1993/django_shop&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/account/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/account/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/tests/test_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/account/tests/test_views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/account/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/account/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cart/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cart/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cart/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cart/context_processors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cart/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cart/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cart/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cart/service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/tests/test_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cart/tests/test_models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/tests/test_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cart/tests/test_views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cart/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/cart/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categories/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/categories/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categories/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/categories/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categories/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/categories/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categories/middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/categories/middleware.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categories/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/categories/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categories/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/categories/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categories/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/categories/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categories/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/categories/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categories/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/categories/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discount/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/discount/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discount/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/discount/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discount/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/discount/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discount/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/discount/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discount/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/discount/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/home/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/home/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/home/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/home/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/login/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/login/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/login/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/login/task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/login/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/login/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/orders/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/orders/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/orders/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/orders/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/orders/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/orders/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/orders/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/orders/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/orders/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/products/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/products/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/products/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/products/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/0002_auto_20200319_2025.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/products/migrations/0002_auto_20200319_2025.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/0003_auto_20200404_1754.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/products/migrations/0003_auto_20200404_1754.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/0004_auto_20200404_1755.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/products/migrations/0004_auto_20200404_1755.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/products/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/products/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/products/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/products/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/registration/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/registration/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/registration/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/registration/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/registration/service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/registration/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/registration/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/search/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/search/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/search/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/search/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/shop/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/shop/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/shop/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/shop/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/shop/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/shop/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,16 +113,17 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/account/tests" />
-      <recent name="$PROJECT_DIR$/project" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/categories/migrations" />
       <recent name="$PROJECT_DIR$/categories" />
       <recent name="$PROJECT_DIR$/templates/shop" />
       <recent name="$PROJECT_DIR$/templates/search" />
       <recent name="$PROJECT_DIR$/search" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend" />
+      <recent name="$PROJECT_DIR$/account/tests" />
+      <recent name="$PROJECT_DIR$/project" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -57,54 +138,54 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for test_models.CartModelTest">
-    <configuration name="Unittests for account.tests.test_views.AccountListViewTest.test_count_orders_for_user" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python tests.Unittests for backend.cart.tests.test_models.CartModelTest">
+    <configuration name="Unittests for backend.account.tests.test_views.AccountListViewTest.test_count_orders_for_user" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="django_shop" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/account" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend/account" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;account.tests.test_views.AccountListViewTest.test_count_orders_for_user&quot;" />
+      <option name="_new_target" value="&quot;backend.account.tests.test_views.AccountListViewTest.test_count_orders_for_user&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for account.tests.test_views.AccountListViewTest.test_logged_user" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for backend.account.tests.test_views.AccountListViewTest.test_logged_user" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="django_shop" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/account" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend/account" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;account.tests.test_views.AccountListViewTest.test_logged_user&quot;" />
+      <option name="_new_target" value="&quot;backend.account.tests.test_views.AccountListViewTest.test_logged_user&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_models.CartModelTest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for backend.cart.tests.test_models.CartModelTest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="django_shop" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cart/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend/cart/tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_models.CartModelTest&quot;" />
+      <option name="_new_target" value="&quot;backend.cart.tests.test_models.CartModelTest&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests for test_models.CartModelTest" />
-        <item itemvalue="Python tests.Unittests for account.tests.test_views.AccountListViewTest.test_count_orders_for_user" />
-        <item itemvalue="Python tests.Unittests for account.tests.test_views.AccountListViewTest.test_logged_user" />
+        <item itemvalue="Python tests.Unittests for backend.cart.tests.test_models.CartModelTest" />
+        <item itemvalue="Python tests.Unittests for backend.account.tests.test_views.AccountListViewTest.test_count_orders_for_user" />
+        <item itemvalue="Python tests.Unittests for backend.account.tests.test_views.AccountListViewTest.test_logged_user" />
       </list>
     </recent_temporary>
   </component>

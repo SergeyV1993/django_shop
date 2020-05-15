@@ -5,17 +5,17 @@ from django.contrib.auth.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('registration.urls')),
-    path('', include('orders.urls')),
-    path('', include('products.urls')),
-    path('', include('home.urls')),
-    path('', include('shop.urls')),
-    path('', include('cart.urls')),
-    path('', include('categories.urls')),
-    path('', include('account.urls')),
-    path('', include('login.urls')),
-    path('', include('discount.urls')),
-    path('', include('search.urls')),
+    path('', include('backend.registration.urls')),
+    path('', include('backend.orders.urls')),
+    path('', include('backend.products.urls')),
+    path('', include('backend.home.urls')),
+    path('', include('backend.shop.urls')),
+    path('', include('backend.cart.urls')),
+    path('', include('backend.categories.urls')),
+    path('', include('backend.account.urls')),
+    path('', include('backend.login.urls')),
+    path('', include('backend.discount.urls')),
+    path('', include('backend.search.urls')),
 
     path(
         'logout/',

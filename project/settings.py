@@ -18,17 +18,18 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
-    'registration',
-    'orders',
-    'products',
-    'home',
-    'shop',
-    'cart',
-    'categories',
-    'account.apps.AccountConfig',
-    'login',
-    'discount',
-    'search',
+    # my_apps
+    'backend.registration',
+    'backend.orders',
+    'backend.products',
+    'backend.home',
+    'backend.shop',
+    'backend.cart',
+    'backend.categories',
+    'backend.account.apps.AccountConfig',
+    'backend.login',
+    'backend.discount',
+    'backend.search',
 
     'debug_toolbar',
     'rest_framework',
@@ -42,7 +43,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'categories.middleware.GetCategory',
+    'backend.categories.middleware.GetCategory',
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -60,7 +61,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'cart.context_processors.cart',
+                'backend.cart.context_processors.cart',
             ],
         },
     },
