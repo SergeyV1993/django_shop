@@ -58,7 +58,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for account.tests.test_views.AccountListViewTest.test_count_orders_for_user">
+  <component name="RunManager" selected="Python tests.Unittests for test_models.CartModelTest">
     <configuration name="Unittests for account.tests.test_views.AccountListViewTest.test_count_orders_for_user" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="django_shop" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -87,8 +87,23 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Unittests for test_models.CartModelTest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="django_shop" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/cart/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_models.CartModelTest&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests for test_models.CartModelTest" />
         <item itemvalue="Python tests.Unittests for account.tests.test_views.AccountListViewTest.test_count_orders_for_user" />
         <item itemvalue="Python tests.Unittests for account.tests.test_views.AccountListViewTest.test_logged_user" />
       </list>
