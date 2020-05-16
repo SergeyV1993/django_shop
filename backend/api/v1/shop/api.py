@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ReadOnlyModelViewSet
 from backend.products.models import *
-from backend.shop.serializers import ShopViewSerializer
+from .serializers import ShopViewSerializer
 
 
 class ShopViewSet(ReadOnlyModelViewSet):

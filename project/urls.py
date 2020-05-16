@@ -17,6 +17,8 @@ urlpatterns = [
     path('', include('backend.discount.urls')),
     path('', include('backend.search.urls')),
 
+    path('', include('backend.api.v1.urls')),
+
     path(
         'logout/',
         LogoutView.as_view(next_page='shop'),
