@@ -8,6 +8,7 @@ from django.views.generic import *
 class AccountView(ListView):
     """Реализация отображения личного кабинета БЕЗ ИСПОЛЬЗОВАНИЯ кэша"""
     model = Order
+    paginate_by = 25
     template_name = 'account/account.html'
 
     def get(self, request, *args, **kwargs):
@@ -25,6 +26,7 @@ class AccountView(ListView):
 class AccountWithCacheView(ListView):
     """Реализация отображения личного кабинета С ИСПОЛЬЗОВАНИЕМ кэша"""
     model = Order
+    paginate_by = 25
     template_name = 'account/account.html'
 
     def get(self, request, *args, **kwargs):

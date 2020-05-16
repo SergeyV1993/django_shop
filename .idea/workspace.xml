@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3568c18f-9e3d-4a06-9601-d89514b9c41b" name="Default Changelist" comment="Merge branch 'master' of https://github.com/SergeyV1993/django_shop&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/v1/shop/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/v1/shop/view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/api/v1/shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/v1/shop/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/shop/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/shop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/shop/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/shop_vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/shop_vue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/account/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/api/v1/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api/v1/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,16 +31,16 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/api/v1/account" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/backend/api/v1/account" />
       <recent name="$PROJECT_DIR$/categories/migrations" />
       <recent name="$PROJECT_DIR$/categories" />
       <recent name="$PROJECT_DIR$/templates/shop" />
       <recent name="$PROJECT_DIR$/templates/search" />
-      <recent name="$PROJECT_DIR$/search" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/backend/api/v1/shop" />
