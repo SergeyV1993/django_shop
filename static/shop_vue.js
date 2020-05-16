@@ -1,4 +1,4 @@
-const api_url = 'http://127.0.0.1:8000/api/shop_view/'
+const api_url = 'http://127.0.0.1:8000/api/v1/shop'
 
 new Vue({
     el: '#shop_vue',

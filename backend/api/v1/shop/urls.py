@@ -1,4 +1,4 @@
-from .api import ShopViewSet
+from .view import ShopViewSet
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
