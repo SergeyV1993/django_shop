@@ -4,7 +4,7 @@ from rest_framework.viewsets import ModelViewSet, GenericViewSet
 from rest_framework import status
 from rest_framework.response import Response
 
-from backend.orders.models import Order
+from backend.account.models import Account
 from .serializers import AccountViewSerializer
 
 
@@ -13,8 +13,9 @@ class AccountViewSet(ModelViewSet):
     permission_classes = [IsAuthenticated, ]
 
     def get_queryset(self):
-        return Order.objects.select_related('status').filter(user=self.request.user).order_by(
-            '-id').prefetch_related('productinorder_set__product')
+        return Account.objects.prefetch_related('order_set__productinorder_set__product') \
+            .prefetch_related('order_set__status') \
+            .get_or_create(user=self.request.user)
 
 
 class AccountDeleteViewSet(DestroyModelMixin, GenericViewSet):
@@ -22,8 +23,8 @@ class AccountDeleteViewSet(DestroyModelMixin, GenericViewSet):
     permission_classes = [IsAuthenticated, ]
 
     def get_object(self):
-        order_objects = self.model.objects.select_related('status').filter(user=self.request.user).all()
-        return order_objects
+        account_object = Account.objects.get(user=self.request.user)
+        return account_object
 
     def destroy(self, request, *args, **kwargs):
         orders_obj = self.get_object()

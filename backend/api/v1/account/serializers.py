@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from backend.orders.models import Order
+from backend.account.models import Account
 
 
 class AccountViewSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Order
+        model = Account
         fields = '__all__'

@@ -1,6 +1,5 @@
 from django.core.cache import cache
 from django.shortcuts import render
-from backend.orders.models import *
 from .models import Account
 from django.http import *
 from django.views.generic import *
@@ -15,7 +14,9 @@ class AccountView(ListView):
     def get(self, request, *args, **kwargs):
         if not request.user.is_authenticated:
             return render(request, self.template_name)
-        account, created = self.model.objects.prefetch_related('order_set').get_or_create(user=request.user)
+        account, created = self.model.objects.prefetch_related('order_set__productinorder_set__product') \
+            .prefetch_related('order_set__status') \
+            .get_or_create(user=request.user)
 
         context = {
             'account_orders': account.order_set.all(),
@@ -36,7 +37,9 @@ class AccountWithCacheView(ListView):
         if 'account' in cache:
             account_orders = cache.get('account')
         else:
-            account_orders, created = self.model.objects.prefetch_related('order_set').get_or_create(user=request.user)
+            account_orders, created = self.model.objects.prefetch_related('order_set__productinorder_set__product') \
+                .prefetch_related('order_set__status') \
+                .get_or_create(user=request.user)
             cache.set('account', account_orders)
 
         context = {
@@ -68,9 +71,12 @@ class AccountDeleteView(DeleteView):
 
 def account_view(request):
     if request.user.is_authenticated:
-        order = Order.objects.select_related('status').filter(user=request.user).order_by('-id').prefetch_related('productinorder_set__product')
+        account, created = Account.objects.prefetch_related('order_set__productinorder_set__product') \
+            .prefetch_related('order_set__status') \
+            .get_or_create(user=request.user)
+
         context = {
-            'order': order,
+            'account_orders': account.order_set.all(),
         }
         return render(request, 'account/account.html', context)
     else:
@@ -79,8 +85,8 @@ def account_view(request):
 
 def delete_account(request):
     if request.user.is_authenticated:
-        order = Order.objects.select_related('status').filter(user=request.user).all()
-        order.delete()
+        account = Account.objects.get(user=self.request.user)
+        account.delete()
         request.user.delete()
         return HttpResponseRedirect("/")
     else:
