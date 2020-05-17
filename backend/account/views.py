@@ -1,31 +1,31 @@
 from django.core.cache import cache
 from django.shortcuts import render
 from backend.orders.models import *
+from .models import Account
 from django.http import *
 from django.views.generic import *
 
 
 class AccountView(ListView):
     """Реализация отображения личного кабинета БЕЗ ИСПОЛЬЗОВАНИЯ кэша"""
-    model = Order
+    model = Account
     paginate_by = 25
     template_name = 'account/account.html'
 
     def get(self, request, *args, **kwargs):
         if not request.user.is_authenticated:
             return render(request, self.template_name)
-        order = self.model.objects.select_related('status').filter(user=request.user).order_by(
-            '-id').prefetch_related('productinorder_set__product')
+        account, created = self.model.objects.prefetch_related('order_set').get_or_create(user=request.user)
 
         context = {
-            'order': order,
+            'account_orders': account.order_set.all(),
         }
         return render(request, self.template_name, context)
 
 
 class AccountWithCacheView(ListView):
     """Реализация отображения личного кабинета С ИСПОЛЬЗОВАНИЕМ кэша"""
-    model = Order
+    model = Account
     paginate_by = 25
     template_name = 'account/account.html'
 
@@ -33,33 +33,32 @@ class AccountWithCacheView(ListView):
         if not request.user.is_authenticated:
             return render(request, self.template_name)
 
-        if 'order' in cache:
-            order = cache.get('order')
+        if 'account' in cache:
+            account_orders = cache.get('account')
         else:
-            order = self.model.objects.select_related('status').filter(user=request.user).order_by(
-                '-id').prefetch_related('productinorder_set__product')
-            cache.set('order', order)
+            account_orders, created = self.model.objects.prefetch_related('order_set').get_or_create(user=request.user)
+            cache.set('account', account_orders)
 
         context = {
-            'order': order,
+            'account_orders': account_orders.order_set.all(),
         }
         return render(request, self.template_name, context)
 
 
 class AccountDeleteView(DeleteView):
     """Удаление личного кабинета"""
-    model = Order
+    model = Account
     template_name = 'account/account.html'
     success_url = '/'
 
     def get_object(self):
-        order_objects = self.model.objects.select_related('status').filter(user=self.request.user).all()
-        return order_objects
+        account_object = self.model.objects.get(user=self.request.user)
+        return account_object
 
     def get(self, request, *args, **kwargs):
-        orders_obj = self.get_object()
+        account_obj = self.get_object()
         user = self.request.user
-        orders_obj.delete()
+        account_obj.delete()
         user.delete()
         return HttpResponseRedirect('/')
 

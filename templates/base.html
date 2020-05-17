@@ -68,7 +68,7 @@
                 {% if request.user.is_authenticated %}
                 <div class="col-sm-6">
                     <div class="shopping-item" data-toggle="modal" data-target="#myModal">
-                        <span class="cart-amunt" id="cart_total_sum">${{ cart.cart_total_price }}</span> <i class="fa fa-shopping-cart"></i> <span class="product-count" id="cart_count">{{ cart.items.count }}</span>
+                        <span class="cart-amunt" id="cart_total_sum">${{ cart.cart_total_price }}</span> <i class="fa fa-shopping-cart"></i> <span class="product-count" id="cart_count">{{ cart.cartitem_set.count }}</span>
                     </div>
                 </div>
 
@@ -85,7 +85,7 @@
           <h3>Товары</h3>
           <table class="shop_table" id="cart_items">
              <tbody>
-               {% for cart_item in cart.items.all %}
+               {% for cart_item in cart.cartitem_set.all %}
                    <tr>
                        <td class="product-name">
                            <a>{{ cart_item.product.name }}</a> <strong class="product-quantity">× {{ cart_item.number_of_product }}</strong>

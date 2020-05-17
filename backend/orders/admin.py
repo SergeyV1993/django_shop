@@ -10,6 +10,7 @@ class ProductInOrderInline(admin.TabularInline):
 @admin.register(Status)
 class StatusAdmin(admin.ModelAdmin):
     list_display = [field.name for field in Status._meta.fields]
+    list_editable = ('is_active',)
 
     class Meta:
         model = Status
@@ -27,6 +28,7 @@ class OrderAdmin(admin.ModelAdmin):
 @admin.register(ProductInOrder)
 class ProductInOrderAdmin(admin.ModelAdmin):
     list_display = [field.name for field in ProductInOrder._meta.fields]
+    list_editable = ('is_active',)
 
     class Meta:
         model = ProductInOrder

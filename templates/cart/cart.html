@@ -16,7 +16,7 @@
 
     <div class="single-product-area">
     {% if request.user.is_authenticated %}
-    {% if cart.items.count > 0 %}
+    {% if cart.cartitem_set.count > 0 %}
         <div class="zigzag-bottom"></div>
         <div class="container">
             <div class="row">
@@ -35,7 +35,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {% for item in cart.items.all %}
+                                        {% for item in cart.cartitem_set.all %}
                                                 <tr class="cart_item-{{ item.product.id }}">
                                                     <td class="product-remove">
                                                         <span title="Remove this item">

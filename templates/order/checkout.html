@@ -36,7 +36,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                          {% for item in cart.items.all %}
+                                          {% for item in cart.cartitem_set.all %}
                                             <tr class="cart_item">
                                                 <td class="product-name">
                                                     {{ item.product.name }} <strong class="product-quantity">× {{ item.number_of_product }}</strong> </td>

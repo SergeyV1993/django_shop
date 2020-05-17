@@ -25,18 +25,21 @@ class AddToCartView(View):
         qty = int(request.POST.get("quantity"))
         product = Product.objects.select_related('type').get(id=product_id)
 
-        new_item, _ = CartItem.objects.select_related('product').get_or_create(product=product,
-                                                                               number_of_product=qty)
+        new_item, created = CartItem.objects.select_related('product').get_or_create(
+            product=product,
+            cart=cart,
+            number_of_product=qty
+        )
         new_item.save()
 
-        if new_item not in cart.items.all():
-            cart.items.add(new_item)
+        if new_item not in cart.cartitem_set.all():
+            cart.cartitem_set.add(new_item)
             cart.cart_total_price += new_item.total_item_price
             cart.save()
 
         if request.is_ajax():
             return JsonResponse({
-                'cart_total': cart.items.count(),
+                'cart_total': cart.cartitem_set.count(),
                 'cart_total_sum': cart.cart_total_price,
                 'cart_total_summ': cart.cart_total_price,  # для разных id в html, так как нельзя юзать сразу несколько
 
@@ -52,18 +55,18 @@ class AddToCartView(View):
 class RemoveFromCartView(View):
 
     def post(self, request):
-        cart = Cart.objects.prefetch_related('items__product').get(id=request.session['cart_id'])
+        cart = Cart.objects.prefetch_related('cartitem_set__product').get(id=request.session['cart_id'])
         product_id = request.POST.get("product_id")
         product = Product.objects.select_related('type').get(id=product_id)
 
-        for cart_item in cart.items.all():
+        for cart_item in cart.cartitem_set.all():
             if cart_item.product == product:
-                cart.items.remove(cart_item)
+                cart_item.delete()
                 cart.cart_total_price -= cart_item.total_item_price
                 cart.save()
 
         return JsonResponse({
-            'cart_total': cart.items.count(),
+            'cart_total': cart.cartitem_set.count(),
             'cart_total_sum': cart.cart_total_price,
             'cart_sum': cart.cart_total_price,
             'cart_total_summ': cart.cart_total_price

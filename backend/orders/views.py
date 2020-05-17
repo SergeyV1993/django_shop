@@ -36,11 +36,13 @@ class CreateOrder(CreateView):
 
         if 'cart_id' not in self.request.session:
             return render(self.request, 'shop/shop.html')
-        cart = Cart.objects.prefetch_related('items__product').get(id=request.session['cart_id'])
+
+        cart = Cart.objects.prefetch_related('cartitem_set').get(id=request.session['cart_id'])
+        account, created = Account.objects.get_or_create(user=request.user)
 
         order = Order.objects.select_related('user').latest('create')
         order.user = request.user
-        products_in_cart = cart.items.all()
+        products_in_cart = cart.cartitem_set.all()
         for item in products_in_cart:
             ProductInOrder.objects.create(order=order,
                                           product=item.product,
@@ -49,11 +51,14 @@ class CreateOrder(CreateView):
                                           total_price=item.total_item_price,
                                           is_active=True)
         order.total_price = cart.cart_total_price
+        order.account = account
         order.save()
+
         context = {
             'cart': cart,
             'order': order,
         }
+
         del request.session['cart_id']
         return render(request, self.success_url, context)
 

@@ -37,7 +37,7 @@ class CartViewTest(TestCase):
 
         """Создаю саму корзину"""
         cart = Cart.objects.create()
-        cart.items.set(CartItem.objects.all())  # необходимо для поля ManyToMany
+        cart.cartitem_set.set(CartItem.objects.all())  # необходимо для поля ManyToMany
         cart.save()
 
     """Общее отображение урла"""
