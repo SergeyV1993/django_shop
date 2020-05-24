@@ -4,5 +4,5 @@ from .serializers import ShopViewSerializer
 
 
 class ShopViewSet(ReadOnlyModelViewSet):
-    queryset = Product.objects.only('id', 'name', 'price').filter(is_active=True)
+    queryset = Product.objects.prefetch_related('type').only('id', 'name', 'price').filter(is_active=True)
     serializer_class = ShopViewSerializer
