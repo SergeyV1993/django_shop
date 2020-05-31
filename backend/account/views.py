@@ -6,7 +6,7 @@ from django.views.generic import *
 
 
 class AccountView(ListView):
-    """Реализация отображения личного кабинета БЕЗ ИСПОЛЬЗОВАНИЯ кэша"""
+    """Реализация отображения личного кабинета С ИСПОЛЬЗОВАНИЯ кэша"""
     model = Account
     paginate_by = 25
     template_name = 'account/account.html'
@@ -14,7 +14,8 @@ class AccountView(ListView):
     def get(self, request, *args, **kwargs):
         if not request.user.is_authenticated:
             return render(request, self.template_name)
-        account, created = self.model.objects.prefetch_related('order_set__productinorder_set__product') \
+        account, created = self.model.objects\
+            .prefetch_related('order_set__productinorder_set__product') \
             .prefetch_related('order_set__status') \
             .get_or_create(user=request.user)
 
@@ -37,7 +38,8 @@ class AccountWithCacheView(ListView):
         if 'account' in cache:
             account_orders = cache.get('account')
         else:
-            account_orders, created = self.model.objects.prefetch_related('order_set__productinorder_set__product') \
+            account_orders, created = self.model.objects\
+                .prefetch_related('order_set__productinorder_set__product') \
                 .prefetch_related('order_set__status') \
                 .get_or_create(user=request.user)
             cache.set('account', account_orders)

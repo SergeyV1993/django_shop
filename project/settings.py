@@ -171,7 +171,7 @@ STATICFILES_DIRS = (
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = '/media/'
-'''
+
 # запускать аккуратно, только после запуска redis-server или докера, иначе будет ошибка
 REDIS_HOST = '0.0.0.0'
 REDIS_PORT = '6379'
@@ -180,23 +180,22 @@ CELERY_BROKER_URL = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
 CELERY_BROKER_TRANSPORT_OPTIONS = {'visibility_timeout': 3600}
 CELERY_RESULT_BACKEND = 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/0'
 
-
 CACHES = {
     'default': {
-    
+
         # "BACKEND": 'django.core.cache.backends.locmem.LocMemCache', #сохраняет кэш в оперативке
         # "BACKEND": 'django.core.cache.backends.dummy.DummyCache', #не сохраняет кэш, нужен для отладки
-        
+
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": 'redis://' + REDIS_HOST + ':' + REDIS_PORT + '/1',
-        "TIMEOUT": 60 * 60, # живучесть кэша в секундах
+        "TIMEOUT": 60 * 60,  # живучесть кэша в секундах
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
-            "MAX_ENTRIES": 400, # количество обращений к кэшу, пока он не обновится
+            "MAX_ENTRIES": 400,  # количество обращений к кэшу, пока он не обновится
         }
     }
 }
-'''
+
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "default"
 

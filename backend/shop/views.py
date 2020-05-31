@@ -4,16 +4,7 @@ from backend.products.models import *
 
 
 class ShopView(ListView):
-    """Реализация отображения всего ассортимента БЕЗ ИСПОЛЬЗОВАНИЕМ кэша"""
-    model = Product
-    template_name = 'shop/shop.html'
-    queryset = model.objects.only('name', 'price', 'image').filter(is_active=True)
-    paginate_by = 25
-    context_object_name = 'products'
-
-
-class ShopWithCacheView(ListView):
-    """Реализация отображения всего ассортимента С ИСПОЛЬЗОВАНИЕМ кэша"""
+    """Реализация отображения всего ассортимента С ИСПОЛЬЗОВАНИЕМ кэша."""
     model = Product
     template_name = 'shop/shop.html'
     paginate_by = 25
@@ -25,8 +16,19 @@ class ShopWithCacheView(ListView):
 
         products = self.model.objects.only('name', 'price', 'image').filter(is_active=True)
         cache.set('products', products)
+
         return products
 
+
+'''
+class ShopView(ListView):
+    """Реализация отображения всего ассортимента БЕЗ ИСПОЛЬЗОВАНИЕМ кэша."""
+    model = Product
+    template_name = 'shop/shop.html'
+    queryset = model.objects.only('name', 'price', 'image').filter(is_active=True)
+    paginate_by = 25
+    context_object_name = 'products'
+'''
 
 '''
 #как запасной вариант для пагинатора
