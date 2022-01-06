@@ -4,7 +4,7 @@ asgiref==3.2.3
 Babel==2.7.0
 beautifulsoup4==4.6.0
 billiard==3.6.0.0
-celery==4.3.0
+celery==5.2.2
 certifi==2018.4.16
 chardet==3.0.4
 configobj==5.0.6
